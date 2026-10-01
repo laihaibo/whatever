@@ -1,0 +1,23 @@
+# dependencies
+node_modules/
+
+# next.js
+.next/
+out/
+
+# env & secrets（BILI_SESSDATA 在此文件，严禁提交）
+.env
+.env.local
+.env.*.local
+
+# 本地大文件中间产物
+data/audio/
+data/whisper-model/
+
+# 本地工具状态
+.mimosa/
+.zcode/
+
+# misc
+*.log
+.DS_Store

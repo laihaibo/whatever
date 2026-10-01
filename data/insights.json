@@ -1,0 +1,571 @@
+{
+  "meta": {
+    "generatedAt": "2026-10-02",
+    "basedOn": "data/videos.json (23 条视频元数据) + data/transcripts.json (23 条 whisper 转写文案，共 9418 字)",
+    "method": "逐条通读视频标题、简介与全文案后人工提炼；每条心得均附原文证据。转写来自本地 ASR，同音字已轻度校正（如：砍架→砍价、简陋→捡漏、长焦率→成交率），引号内引用以语义为准",
+    "confidenceLevels": {
+      "high": "≥2 条视频文案交叉印证同一方法论",
+      "medium": "单条视频文案/简介明确阐述",
+      "inferred": "从发布模式、数据或标题推断，未在文案中直接阐述，页面以「推断」标注"
+    },
+    "excludedVideos": [
+      {
+        "bvid": "BV1etmtB9EtL",
+        "title": "海贼王船上，勇敢的战士乌索普大人说……——AI大碟《出航》",
+        "reason": "AI 音乐娱乐内容，无赚钱/销售心得"
+      }
+    ]
+  },
+  "categories": [
+    { "id": "sales-core", "name": "成交心法", "icon": "🎯", "color": "blue", "description": "销售的底层逻辑与心法：本质、信任、态度" },
+    { "id": "demand-scene", "name": "需求与场景", "icon": "🔍", "color": "green", "description": "识别需求、创造使用场景、找对痛点" },
+    { "id": "timing-control", "name": "时机与控场", "icon": "⏱️", "color": "amber", "description": "读懂信号、抓住黄金时间、掌握节奏" },
+    { "id": "price-negotiation", "name": "价格与议价", "icon": "⚖️", "color": "rose", "description": "守价、砍价、比价陷阱与议价重置" },
+    { "id": "psych-toolbox", "name": "心理学工具箱", "icon": "🧠", "color": "violet", "description": "锚定、稀缺、峰终定律等行为经济学武器" },
+    { "id": "ip-strategy", "name": "个人 IP 与内容策略", "icon": "📣", "color": "cyan", "description": "从发布模式与数据反推的内容创作方法论（多为推断）" }
+  ],
+  "insights": [
+    {
+      "id": "i-001",
+      "categoryId": "sales-core",
+      "title": "销售的本质：帮对方解决问题",
+      "summary": "交易的本质是解决顾客的问题，成交的关键是打消对方的顾虑——所谓双赢，是双方同时获得满足感，而不是谁让谁吃亏。",
+      "tags": ["卖方视角", "底层逻辑"],
+      "confidence": "high",
+      "evidence": [
+        { "bvid": "BV1yt9FBkE4d", "field": "description", "quote": "不论面对什么样的顾客，交易的本质是帮顾客解决问题，而成交的关键则是打消对方顾虑" },
+        { "bvid": "BV1hbQtBZENk", "field": "description", "quote": "之前讲过销售的本质是解决对方的问题" },
+        { "bvid": "BV1yt9FBkE4d", "field": "transcript", "quote": "不论面对什么样的顾客,交易的本质是解决对方的问题,而成交的关键则是大交(打消)对方顾虑", "t": [75, 82] }
+      ]
+    },
+    {
+      "id": "i-002",
+      "categoryId": "sales-core",
+      "title": "一切皆销售：面试也是自我销售",
+      "summary": "面试是把自己劳动价值「卖」给公司的过程，HR 就是你的顾客——把集市上学到的销售技巧迁移到求职、生活中。",
+      "tags": ["通用", "迁移应用"],
+      "confidence": "high",
+      "evidence": [
+        { "bvid": "BV1YXVg69EmS", "field": "description", "quote": "面试可以理解成为一种自身劳动价值的“销售”的过程，HR就是你的顾客" },
+        { "bvid": "BV1hbQtBZENk", "field": "description", "quote": "（个人认为，面试只是自我销售的的另一种形式）" },
+        { "bvid": "BV1GGJP6JEtD", "field": "description", "quote": "有的同学看到的是卖菜，有的同学看到销售的一些底层逻辑" }
+      ]
+    },
+    {
+      "id": "i-003",
+      "categoryId": "sales-core",
+      "title": "摆摊是门槛最低的创业起点",
+      "summary": "想创业，摆摊是最简单好上手的途径：投入小、决策快、当场就能验证你的销售能力。",
+      "tags": ["创业", "卖方视角"],
+      "confidence": "medium",
+      "evidence": [
+        { "bvid": "BV1qVP4zAEbU", "field": "description", "quote": "如果你想创业，摆摊是最简单好上手的途径" },
+        { "bvid": "BV1hacgzNEMY", "field": "description", "quote": "如果你想创业，摆摊是最简单好上手的途径，过程中一定会遇到犹豫不决的客户" }
+      ]
+    },
+    {
+      "id": "i-004",
+      "categoryId": "sales-core",
+      "title": "打动顾客的不是卖点，而是「获利点」",
+      "summary": "别只讲产品好在哪，讲清顾客能从中得到什么好处。比如卖小风扇，别只吹电机和材料，「宿舍不用插线」才是顾客的获利点。",
+      "tags": ["卖方视角", "利他思维"],
+      "confidence": "medium",
+      "evidence": [
+        { "bvid": "BV1hbQtBZENk", "field": "transcript", "quote": "不管做多大的生意,打动顾客的从来就不是产品的卖点。而是顾客的货利点(获利点)", "t": [79, 90] },
+        { "bvid": "BV1GGJP6JEtD", "field": "transcript", "quote": "火轻的能多放两天,福瑞用的就是利他思维", "t": [53, 58] }
+      ]
+    },
+    {
+      "id": "i-005",
+      "categoryId": "sales-core",
+      "title": "有顾虑才是真想买",
+      "summary": "不怕挑剔就怕沉默：顾客提出质疑、找借口，说明他在认真往「买」的方向考虑——顾虑就是你的机会。",
+      "tags": ["卖方视角", "异议处理"],
+      "confidence": "high",
+      "evidence": [
+        { "bvid": "BV1GGJP6JEtD", "field": "transcript", "quote": "不怕挑剔,就怕不回应……实际是怕买得和掰开的不一样,有顾虑就有机会", "t": [19, 26] },
+        { "bvid": "BV1o18i6GEv4", "field": "transcript", "quote": "顾客有顾虑了不用怕,有顾虑才是真往买的方向考虑了", "t": [81, 86] },
+        { "bvid": "BV1iBcrzaEUx", "field": "transcript", "quote": "拒绝后仍继续沟通,是内心矛盾的表现。连拒绝都找借口,他就是在等你,给个留下的理由", "t": [53, 59] }
+      ]
+    },
+    {
+      "id": "i-006",
+      "categoryId": "sales-core",
+      "title": "拒绝是销售的开始，不是结束",
+      "summary": "一口回绝后仍继续沟通的顾客并没有关门；给一个留下的理由（更方便、更省时间），拒绝可以变成成交的起点。",
+      "tags": ["卖方视角", "异议处理"],
+      "confidence": "medium",
+      "evidence": [
+        { "bvid": "BV1iBcrzaEUx", "field": "transcript", "quote": "此时让顾客觉得,在这买更方便,更省时间,就是浮锐(福瑞)的主场优势。记住,拒绝是销售的开始,不是结束", "t": [66, 78] }
+      ]
+    },
+    {
+      "id": "i-007",
+      "categoryId": "sales-core",
+      "title": "只要人没走，交易就有转机",
+      "summary": "顾客收回了手、放慢了脚步，都是犹豫而非拒绝。人还在，就还有机会用理由和方案把他拉回来。",
+      "tags": ["卖方视角", "心态"],
+      "confidence": "medium",
+      "evidence": [
+        { "bvid": "BV1hacgzNEMY", "field": "transcript", "quote": "输回手,但没有走市(是)犹豫的信号……记住,只要人没走,交易就有转机", "t": [19, 54] },
+        { "bvid": "BV1i3kFBPEmR", "field": "transcript", "quote": "买家冰(边)走冰(边)看是典型的犹豫信号,没真放弃", "t": [9, 18] }
+      ]
+    },
+    {
+      "id": "i-008",
+      "categoryId": "demand-scene",
+      "title": "需求判别是购买决策的第一步",
+      "summary": "顾客常常并不清楚自己要什么。给商品创造一个使用场景去唤醒需求——有了需求，交易才会发生。",
+      "tags": ["卖方视角", "需求"],
+      "confidence": "high",
+      "evidence": [
+        { "bvid": "BV1hhApz3ExY", "field": "description", "quote": "消费者在进行购买决策的第一步，就是需求的判别，很多时候顾客并不清晰自己的需求，所以我们要给对方创造使用场景，以此来去唤醒对方" },
+        { "bvid": "BV1hhApz3ExY", "field": "transcript", "quote": "直接给个使用场景,别爆玩价就干等着。要让买的人产生使用联想,拿场景去激活需求留人", "t": [9, 15] }
+      ]
+    },
+    {
+      "id": "i-009",
+      "categoryId": "demand-scene",
+      "title": "场景种草：画面有了，买的理由就来了",
+      "summary": "顾客说韭菜好，立刻用「包饺子」带入使用场景——画面感会自然生成购买理由。",
+      "tags": ["卖方视角", "场景"],
+      "confidence": "medium",
+      "evidence": [
+        { "bvid": "BV1YXVg69EmS", "field": "transcript", "quote": "一听大娘说韭菜好,芙蕊立马用包饺子带入……场景有了,画面有了,买的理由就跟着来了", "t": [32, 40] },
+        { "bvid": "BV1hacgzNEMY", "field": "transcript", "quote": "察觉波采(包菜?)飞钢(刚虚/刚需)后,立刻把话题带入韭菜。作为小年前的及时囤货,韭菜是极大可能的钢虚(刚需)", "t": [46, 54] }
+      ]
+    },
+    {
+      "id": "i-010",
+      "categoryId": "demand-scene",
+      "title": "大客户成交法：聊他想要的，别聊你的产品",
+      "summary": "和大客户沟通，不是介绍产品、不是诉苦，而是聊对方感兴趣的话题，从他的言语中找线索，并一步步让他得到满足。",
+      "tags": ["卖方视角", "大客户"],
+      "confidence": "high",
+      "evidence": [
+        { "bvid": "BV17cdGBiEGT", "field": "description", "quote": "和大客户聊天，不是介绍你的产品，不是诉说你的不容易，要聊对方感兴趣的，从对方的言语中，获取你需要的线索" },
+        { "bvid": "BV17cdGBiEGT", "field": "transcript", "quote": "生意场上,能影响他人决策的方法,就是和他聊他想要的,并一步步让他得到满足", "t": [86, 93] }
+      ]
+    },
+    {
+      "id": "i-011",
+      "categoryId": "demand-scene",
+      "title": "找对痛点才能留人",
+      "summary": "城里人跑来农村赶集，图的就是「平时买不到的新鲜」——把痛点找对了，人才留得下。",
+      "tags": ["卖方视角", "痛点"],
+      "confidence": "medium",
+      "evidence": [
+        { "bvid": "BV17cdGBiEGT", "field": "transcript", "quote": "城市口音来农村感激(赶集),涂(图)的就是新鲜东西……他们来农村感激(赶集),要的就是平时买不到的。把痛点找对了,才能留住人", "t": [7, 35] }
+      ]
+    },
+    {
+      "id": "i-012",
+      "categoryId": "demand-scene",
+      "title": "先分辨：比价客还是真买家",
+      "summary": "提着兜、拎着货、带着小推车的，多半是真买；空手闲逛只问价的，多半在比价。判断错了，后面全白费。",
+      "tags": ["卖方视角", "客户识别"],
+      "confidence": "high",
+      "evidence": [
+        { "bvid": "BV1hhApz3ExY", "field": "transcript", "quote": "有人问价,先判断对方是比价,还是真想买?……买价(买家)手上提兜,明显不是闲逛", "t": [0, 9] },
+        { "bvid": "BV1yt9FBkE4d", "field": "transcript", "quote": "两手空空分价(问价),明显是刚来干净,买的概率很低,寻价为主。反之,收上东西不少……这类顾客购买意向极高", "t": [0, 13] },
+        { "bvid": "BV1B96yBxE7c", "field": "transcript", "quote": "车上有菜还停车问价,是高购买倾向的信号,比空手问价更容易成交", "t": [70, 76] }
+      ]
+    },
+    {
+      "id": "i-013",
+      "categoryId": "demand-scene",
+      "title": "把季节需求变成卖点",
+      "summary": "同一款菜，冬天是火锅场景，夏天就是凉拌场景——顺着季节把使用场景说出口，需求就被激活了。",
+      "tags": ["卖方视角", "场景"],
+      "confidence": "medium",
+      "evidence": [
+        { "bvid": "BV1hhApz3ExY", "field": "transcript", "quote": "冬天是火锅的大概率需求。夏天就提凉拌,把季节需求变成卖点", "t": [20, 25] }
+      ]
+    },
+    {
+      "id": "i-014",
+      "categoryId": "timing-control",
+      "title": "黄金时间：兴趣与注意力的高峰",
+      "summary": "顾客在「评估选择」阶段对产品的兴趣和注意力达到高峰，此时销售人员的引导最容易影响决策——这就是出手时机。",
+      "tags": ["卖方视角", "时机"],
+      "confidence": "medium",
+      "evidence": [
+        { "bvid": "BV122okBgEN5", "field": "description", "quote": "在“信息收集”后进入“评估选择”阶段时，消费者对产品的兴趣和注意力处于高峰，这其实就是视频中说的“黄金时间”，此时销售人员的引导更容易影响决策" },
+        { "bvid": "BV122okBgEN5", "field": "transcript", "quote": "生意的成交从来不能只靠流程,意外不一定是麻烦,抓准了就是你的黄金时间", "t": [76, 81] }
+      ]
+    },
+    {
+      "id": "i-015",
+      "categoryId": "timing-control",
+      "title": "意外不是麻烦，抓准了就是机会",
+      "summary": "孩子哭闹不走、家长回来哄孩子——这些「意外」恰恰是再次接触的黄金时间。注意力全放在顾客身上，才能抓住它。",
+      "tags": ["卖方视角", "时机"],
+      "confidence": "medium",
+      "evidence": [
+        { "bvid": "BV122okBgEN5", "field": "transcript", "quote": "孩子哭闹不走,拿狮子(柿子?)哄探(疼)……立刻强调为生肃(维生素)对孩子好,这不是在推销,是要让意外变成机会", "t": [46, 65] },
+        { "bvid": "BV122okBgEN5", "field": "transcript", "quote": "要把注意力全部放在顾客身上,才能把握住时机", "t": [69, 72] }
+      ]
+    },
+    {
+      "id": "i-016",
+      "categoryId": "timing-control",
+      "title": "先看货后问价，主动权就开始倾斜",
+      "summary": "买家主动上手挑选、看货入局，说明视觉判断下品质已初步通过——这时候别急着议价，先放大产品优点。",
+      "tags": ["卖方视角", "信号"],
+      "confidence": "medium",
+      "evidence": [
+        { "bvid": "BV1B96yBxE7c", "field": "transcript", "quote": "当买家先看货后问价时,交易的主动权就开始倾斜……主动上手挑选,使(是)暴露买家真实需求的关键动作", "t": [10, 22] },
+        { "bvid": "BV1qVP4zAEbU", "field": "transcript", "quote": "看货就是入局的信号", "t": [19, 20] }
+      ]
+    },
+    {
+      "id": "i-017",
+      "categoryId": "timing-control",
+      "title": "嘴会骗人，动作不会",
+      "summary": "眼神飘向塑料袋、收回手却没走、吃完没立刻走——身体语言比语言更诚实，学会读行为信号再决定下一步。",
+      "tags": ["卖方视角", "信号"],
+      "confidence": "high",
+      "evidence": [
+        { "bvid": "BV1iBcrzaEUx", "field": "transcript", "quote": "嘴可以骗人,动作却很少骗人", "t": [66, 70] },
+        { "bvid": "BV1B96yBxE7c", "field": "transcript", "quote": "眼神飘向塑料袋,释放成交信号", "t": [46, 49] },
+        { "bvid": "BV1RVADz4ESN", "field": "transcript", "quote": "不论农村大吉(赶集)还是街边商店,身体语言都比语言更有效", "t": [54, 58] }
+      ]
+    },
+    {
+      "id": "i-018",
+      "categoryId": "timing-control",
+      "title": "帮犹豫的人做决定：把「要不要」换成「要多少」",
+      "summary": "顾客停在犹豫里时，替他把选择题从「买不买」换成「买哪种、要多少」——只要他开口，就是往成交方向走。给思考时间，就是给反悔机会。",
+      "tags": ["卖方视角", "促单"],
+      "confidence": "high",
+      "evidence": [
+        { "bvid": "BV1hbQtBZENk", "field": "transcript", "quote": "停车却不回应,明显是在犹豫。此时帮她做决定,把要不要换成要多少", "t": [18, 26] },
+        { "bvid": "BV1hacgzNEMY", "field": "transcript", "quote": "给犹豫性买家推荐合理的购买量,快速出城郊(成交易)避免变数,给思考时间,就是给反悔机会", "t": [57, 65] }
+      ]
+    },
+    {
+      "id": "i-019",
+      "categoryId": "timing-control",
+      "title": "回头客要快节奏：默认成交",
+      "summary": "顾客去而复返，说明已认可品质。此时节奏要快，直接问「要几块钱的」——减少反悔窗口，默认成交。",
+      "tags": ["卖方视角", "促单"],
+      "confidence": "medium",
+      "evidence": [
+        { "bvid": "BV1YXVg69EmS", "field": "transcript", "quote": "面对大娘再次回头,节奏要快。随即直接问要几块钱的,减少反悔,默认成交", "t": [105, 110] }
+      ]
+    },
+    {
+      "id": "i-020",
+      "categoryId": "price-negotiation",
+      "title": "价格拉扯的本质是价值判断",
+      "summary": "卖方想保本要利润，买方想省钱拿好货，没有谁对谁错——找到那个双方都能接受的价值平衡点，交易才能达成。",
+      "tags": ["通用", "谈判"],
+      "confidence": "medium",
+      "evidence": [
+        { "bvid": "BV1RVADz4ESN", "field": "description", "quote": "购物时的价格拉扯，本质是双方对价值的判断。卖方想保本要利润，买方想省钱拿好货，没有谁对谁错，找到那个平衡点，交易才能顺畅达成" },
+        { "bvid": "BV1RVADz4ESN", "field": "transcript", "quote": "健康的市场,不是你逼他亏本,而是双方找到了都能接受的货义(互益)平衡点", "t": [109, 116] }
+      ]
+    },
+    {
+      "id": "i-021",
+      "categoryId": "price-negotiation",
+      "title": "砍价第一戒律：别先报底价",
+      "summary": "卖家让你出价时不要说数——你一说 60，他就从 60 往上拉，最后 65-70 成交。用「再逛逛」反向施压，守住主动权。",
+      "tags": ["买方视角", "谈判"],
+      "confidence": "medium",
+      "evidence": [
+        { "bvid": "BV1RVADz4ESN", "field": "transcript", "quote": "不要陷入对方制造的诚意感假象,它在测试你的心理价位,一旦你说60行不行,卖家就知道你的底是60,它会从60往上拉", "t": [31, 43] },
+        { "bvid": "BV1RVADz4ESN", "field": "transcript", "quote": "一家前妻(议价前)一定不要主动给价,不然就知道你的底了", "t": [43, 48] }
+      ]
+    },
+    {
+      "id": "i-022",
+      "categoryId": "price-negotiation",
+      "title": "买方砍价工具箱",
+      "summary": "五件套：挑毛病当砍价借口、用多买当筹码、用「再逛逛」制造竞争压力、只跟主理人谈（别人没有定价权）、最后用折中价+复购承诺收尾。",
+      "tags": ["买方视角", "谈判"],
+      "confidence": "high",
+      "evidence": [
+        { "bvid": "BV1hFzvBmEv5", "field": "transcript", "quote": "先调此(挑次),是砍价钱常用的试探性手段,本质是为砍价找合理借口……用多买当筹码,可常时获取更低单价", "t": [16, 29] },
+        { "bvid": "BV1RVADz4ESN", "field": "transcript", "quote": "买东西砍价也一样,首选跟主理人谈,因为其他人没有定价权,给不到你想要的价格", "t": [75, 82] },
+        { "bvid": "BV1hFzvBmEv5", "field": "transcript", "quote": "最后,抛出预期的折中价,再用复购的清粉(情分)手口(手法),触发摊主留存心理,趁势达成交易", "t": [54, 60] }
+      ]
+    },
+    {
+      "id": "i-023",
+      "categoryId": "price-negotiation",
+      "title": "警惕比价陷阱",
+      "summary": "买家拿竞品压价时，你要看清：说别家更便宜却还停在你摊前，说明他要的其实是性价比。跟风降价=掉进别人设计的价格规则。",
+      "tags": ["卖方视角", "守价"],
+      "confidence": "medium",
+      "evidence": [
+        { "bvid": "BV1SbFezhEDQ", "field": "description", "quote": "作为被动面对价格的一方，所有因对方刻意设计价格规则导致的不利情况，都叫比价陷阱" },
+        { "bvid": "BV1SbFezhEDQ", "field": "transcript", "quote": "买价(买家)说别家更便宜,却依然停留,已经暴露了,寻求性价比产品的真实意图", "t": [50, 56] }
+      ]
+    },
+    {
+      "id": "i-024",
+      "categoryId": "price-negotiation",
+      "title": "守价三步：不贬竞品 → 讲价值差异 → 给参照锚",
+      "summary": "被比价时：永远不否定竞品，肯定客户的认知，只强调「货不同价不同」；再用熟知的参照物（绿皮萝卜 vs 胡萝卜）凸显自己划算，让买家觉得「值」。",
+      "tags": ["卖方视角", "守价"],
+      "confidence": "medium",
+      "evidence": [
+        { "bvid": "BV1SbFezhEDQ", "field": "transcript", "quote": "首先,永远不要否定进品(竞品),要肯定客户的认知,只强调或不同价不同(货不同价不同)", "t": [39, 45] },
+        { "bvid": "BV1SbFezhEDQ", "field": "transcript", "quote": "用熟知的绿皮萝卜做价格参照,凸显胡萝卜的性价比优势,让买价(买家)赶到(感到)买得值", "t": [87, 93] }
+      ]
+    },
+    {
+      "id": "i-025",
+      "categoryId": "price-negotiation",
+      "title": "议价重置：僵局时重建规则",
+      "summary": "谈不下去时，打破原有议价基准重新开桌：抛出极致低价重置规则、或用「都打包」整体加码倒逼更低单价，比纠缠单价硬砍更高明。",
+      "tags": ["买方视角", "谈判"],
+      "confidence": "medium",
+      "evidence": [
+        { "bvid": "BV1hFzvBmEv5", "field": "description", "quote": "议价重置就是打破原有议价规则，重新建立全新议价基准、沟通机制或利益分配模式" },
+        { "bvid": "BV1hFzvBmEv5", "field": "transcript", "quote": "抓住摊主5块3斤的松动信号,抛出极致低价重置一价(议价)规则,占据砍价主动权", "t": [30, 45] }
+      ]
+    },
+    {
+      "id": "i-026",
+      "categoryId": "price-negotiation",
+      "title": "客户不怕贵，怕买得比别人贵",
+      "summary": "让利要给名头：「今天头一回降价」「大户价」——满足的是顾客「我买到了别人拿不到的价」的占便宜心理，而不是便宜本身。",
+      "tags": ["卖方视角", "让利"],
+      "confidence": "medium",
+      "evidence": [
+        { "bvid": "BV1hbQtBZENk", "field": "transcript", "quote": "记住,客户不怕东西贵,怕的是买得比别人贵", "t": [75, 78] },
+        { "bvid": "BV1hbQtBZENk", "field": "transcript", "quote": "福瑞用今天头一回降价,来满足对方能简陋(捡漏)的心理", "t": [39, 42] },
+        { "bvid": "BV15whB65EbV", "field": "transcript", "quote": "让力(让利)的前提是,让对方觉得东西值", "t": [92, 95] }
+      ]
+    },
+    {
+      "id": "i-027",
+      "categoryId": "psych-toolbox",
+      "title": "锚定效应：第一印象决定判断基准",
+      "summary": "人们决策时过度依赖最先接触到的信息（锚点）。先在买家心里定下「批发市场都三块、品质可靠」的认知，再用坚定态度设立交易边界。",
+      "tags": ["卖方视角", "定价"],
+      "confidence": "medium",
+      "evidence": [
+        { "bvid": "BV1i3kFBPEmR", "field": "description", "quote": "锚定效应——是指人们在做决策时，会过度依赖最先接触到的信息（即 “锚点”），并以此为基准调整后续判断" },
+        { "bvid": "BV1i3kFBPEmR", "field": "transcript", "quote": "贪主(摊主)强调发(批发)市场都三块不是蚕子品(残次品),使(是)利用锚定效应,在买家心理定下价格合理、品质可靠的认知,通过坚定的态度设理(设立)交易边界", "t": [29, 39] }
+      ]
+    },
+    {
+      "id": "i-028",
+      "categoryId": "psych-toolbox",
+      "title": "反向锚定：用新参照标准改写判断",
+      "summary": "打破对方心里的旧锚点，重新设一个对你有利的新锚：用往日价格做参照、「配料一碗都45了」抬高参照系——买家立刻觉得现在划算。",
+      "tags": ["卖方视角", "定价"],
+      "confidence": "high",
+      "evidence": [
+        { "bvid": "BV1ctrQBnExi", "field": "description", "quote": "反向锚定——是锚定效应的反向应用，指打破人们对初始“锚点”（如价格、标准）的依赖，通过设置新的参照标准，影响决策判断" },
+        { "bvid": "BV1SbFezhEDQ", "field": "transcript", "quote": "老板不解释成本一价(议价),而是告诉我,蓝料( lan料?)一碗都45了,我会立刻觉得猪脚翻(饭)超值", "t": [96, 104] },
+        { "bvid": "BV17FkjB2EPH", "field": "transcript", "quote": "逃往日价格做毛(锚)点,降低你对当前6块的抵触,让你觉得如今划算", "t": [16, 21] }
+      ]
+    },
+    {
+      "id": "i-029",
+      "categoryId": "psych-toolbox",
+      "title": "借差衬优（诱饵效应）：用次品衬托主推款",
+      "summary": "特意引入一个全方位弱于主推款、但不完全弱于竞品的「诱饵选项」，放大品质差距，让主推款的价值瞬间凸显。",
+      "tags": ["卖方视角", "定价"],
+      "confidence": "medium",
+      "evidence": [
+        { "bvid": "BV15whB65EbV", "field": "description", "quote": "非对称优势，是指特意新增第三个选项（诱饵），它全方位弱于主推款，但不完全弱于竞品；诱饵出现是唯一目的，就是衬托主推产品" },
+        { "bvid": "BV15whB65EbV", "field": "transcript", "quote": "抓住大娘对刺国(次果)的嫌弃,迅速强调好果的优势,把品质差距放大,好获(货)的价值就凸显出来了", "t": [64, 71] }
+      ]
+    },
+    {
+      "id": "i-030",
+      "categoryId": "psych-toolbox",
+      "title": "标杆产品：高价款带火现金流款",
+      "summary": "产品多元时，树立一个高价标杆产品做对比，能有效提升主力（现金流）产品的销量——贵的那款就是用来「衬托划算」的。",
+      "tags": ["卖方视角", "定价"],
+      "confidence": "medium",
+      "evidence": [
+        { "bvid": "BV17FkjB2EPH", "field": "description", "quote": "在产品多元的情况下，树立标杆产品做对比，可有效提升现金流产品销量" },
+        { "bvid": "BV17FkjB2EPH", "field": "transcript", "quote": "福瑞既至旧单(机智就这点?),用六元香菜做高价标杆。胡伯伯(胡萝卜)一言(一元?),凸显极致划算,孝动(撬动)购买欣为(行为)", "t": [31, 38] }
+      ]
+    },
+    {
+      "id": "i-031",
+      "categoryId": "psych-toolbox",
+      "title": "稀缺+紧迫：限量比降价管用",
+      "summary": "「库存见底」「露天韭菜本来就不多，再不买就没了」——对已认可品质但还在犹豫的顾客，稀缺永远比降价管用。",
+      "tags": ["卖方视角", "促单"],
+      "confidence": "high",
+      "evidence": [
+        { "bvid": "BV1qVP4zAEbU", "field": "transcript", "quote": "报价后接着说库存见底,制造紧迫感是买卖中常用的饥饿营销手段,让买家觉得再不买就没了", "t": [9, 16] },
+        { "bvid": "BV1YXVg69EmS", "field": "transcript", "quote": "路天(露天)韭菜机上(基本)本来就少,说再不买就没了,是直戳大娘亲窝子(心窝子)……这可比降价更拐用(管用)", "t": [93, 102] },
+        { "bvid": "BV1YXVg69EmS", "field": "transcript", "quote": "如果你的顾客认可了品质,却迟迟不下单,记住,限量永远比现实(让利?)拐用(管用)", "t": [113, 118] }
+      ]
+    },
+    {
+      "id": "i-032",
+      "categoryId": "psych-toolbox",
+      "title": "社会证明：销量就是价格合理的铁证",
+      "summary": "用已成交案例证明定价合理、用两大袋销量激活从众心理、让老主顾夸一句——别人的一句话，比你自己夸十句管用。",
+      "tags": ["卖方视角", "信任"],
+      "confidence": "high",
+      "evidence": [
+        { "bvid": "BV1yt9FBkE4d", "field": "transcript", "quote": "收尾的弹架(谈判),福瑞用卖的死包(好?)直接把砍架(砍价)毒(堵)死。记住,销量好就是价格合理的铁证", "t": [66, 72] },
+        { "bvid": "BV1qVP4zAEbU", "field": "transcript", "quote": "老主顾此事(实时?)的夸赞,更是将买家一的犹豫,转为强到(抢到)好获(货)的信息。接着,客户听你说一句,比你夸十句更管用", "t": [59, 67] },
+        { "bvid": "BV1SbFezhEDQ", "field": "transcript", "quote": "用两大代(袋)销量,暗示定价合理性,激活买价(买家)多人以购(以后?)的从中心理", "t": [57, 64] }
+      ]
+    },
+    {
+      "id": "i-033",
+      "categoryId": "psych-toolbox",
+      "title": "决策外包=风险移交：替对方算账",
+      "summary": "当顾客问「你说哪个好」时，本质是把决策风险移交给你。想提高成交率，先学会替对方算账、给可操作的方案——空口承诺没有可信度。",
+      "tags": ["通用", "信任"],
+      "confidence": "medium",
+      "evidence": [
+        { "bvid": "BV1ucwXznEus", "field": "description", "quote": "当出现“买不买”这种选择题时，就会出现“决策外包”的现象，本质其实是一种风险移交" },
+        { "bvid": "BV1GGJP6JEtD", "field": "transcript", "quote": "记住,不论什么样的声音,想提高长焦率(成交率),先学会替对方算账", "t": [74, 80] },
+        { "bvid": "BV1hacgzNEMY", "field": "transcript", "quote": "面对客户犹豫的问题,要基于(给?)客户简单可操作的方案。空口承诺,没有可信步(度)", "t": [29, 35] }
+      ]
+    },
+    {
+      "id": "i-034",
+      "categoryId": "psych-toolbox",
+      "title": "信息不对称时，可验证的信息比优惠更有效",
+      "summary": "买家有认知、怕的是「需求错配」。现场试吃、自证可信（自家种的用药少）——给可验证的信息，比直接给优惠更能降低决策成本。",
+      "tags": ["卖方视角", "信任"],
+      "confidence": "medium",
+      "evidence": [
+        { "bvid": "BV1aYzkBMEqg", "field": "transcript", "quote": "当买卖双方存在信息部队称(不对称)时,给它可验证的信息,逼它(比给?)它优惠更有效", "t": [58, 62] },
+        { "bvid": "BV1aYzkBMEqg", "field": "transcript", "quote": "有认知的买家怕的不是价格高,而是需求挫配(错配)", "t": [30, 35] },
+        { "bvid": "BV1o18i6GEv4", "field": "transcript", "quote": "面对质疑,福瑞没有啃着脖子否认,先说清楚泡水对自己的坏处,反而更有可信度", "t": [63, 70] }
+      ]
+    },
+    {
+      "id": "i-035",
+      "categoryId": "psych-toolbox",
+      "title": "父母对孩子从不抠门",
+      "summary": "顾客自己可能很节俭，但给孩子花钱绝对舍得。发现对方带孩子，把话题引到孩子身上，是最有效的需求放大器。",
+      "tags": ["卖方视角", "人性"],
+      "confidence": "medium",
+      "evidence": [
+        { "bvid": "BV1hhApz3ExY", "field": "transcript", "quote": "发现买价(买家)迟迟没动,立刻引入孩子吃,这一枪心机。记住,父母可能对自己扣门(抠门),但绝对舍得给孩子花钱", "t": [54, 62] }
+      ]
+    },
+    {
+      "id": "i-036",
+      "categoryId": "psych-toolbox",
+      "title": "从众与羊群效应",
+      "summary": "高峰时段多人停留选购的场景本身就在带货：围观人群会激发从众心理，引发跟风采购。",
+      "tags": ["卖方视角", "流量"],
+      "confidence": "medium",
+      "evidence": [
+        { "bvid": "BV17FkjB2EPH", "field": "transcript", "quote": "高峰时段,多人停留选购的场景,毁击或(会激发?)人群从重(众)心理。竟而引发羊群效应,带动伯(跟)风采购", "t": [40, 47] }
+      ]
+    },
+    {
+      "id": "i-037",
+      "categoryId": "psych-toolbox",
+      "title": "识人：支配型人格的沟通拆解（弱关联）",
+      "summary": "面对支配型人格：先自我防御避免被定性、捕捉情绪信号打破对立、看似拉家常实则在拉同盟。此条来自家庭沟通视频，与做生意的关联为推断。",
+      "tags": ["识人", "沟通"],
+      "confidence": "inferred",
+      "note": "视频主题是家庭关系中的高支配性人格科普，仅人格定义来自简介；把结论迁移到商业谈判场景属推断，请谨慎采用",
+      "evidence": [
+        { "bvid": "BV1u6kMBjErN", "field": "description", "quote": "高支配性人格是一种以支配他人为主要目的、以控制他人为手段的人格类型" },
+        { "bvid": "BV1u6kMBjErN", "field": "transcript", "quote": "而习临瑞(福瑞?)捕捉到婆婆的情绪信号,打破对职分配(对峙?),成功拉回婆婆笑脸", "t": [29, 34] }
+      ]
+    },
+    {
+      "id": "i-038",
+      "categoryId": "ip-strategy",
+      "title": "系列化编号连载，养成追更",
+      "summary": "「集市成交术一～十」+ 议价篇/砍价篇番外的编号体系，让单条视频变成连续剧，观众为了「集齐」而关注追更。",
+      "tags": ["推断", "内容策略"],
+      "confidence": "inferred",
+      "evidence": [
+        { "bvid": "BV1hacgzNEMY", "field": "title", "quote": "大学生就业指导之返乡摆摊卖菜（集市成交术一）" },
+        { "bvid": "BV1YXVg69EmS", "field": "title", "quote": "【稀缺】——农村MBA大学生就业指导之返乡摆摊卖菜（十）" },
+        { "bvid": "BV1SbFezhEDQ", "field": "transcript", "quote": "那么你是设计规则的一方,还是被动面对的一方呢,下期我们继续", "t": [110, 118] }
+      ]
+    },
+    {
+      "id": "i-039",
+      "categoryId": "ip-strategy",
+      "title": "固定叙事结构：场景→拆解→「你觉得对吗？」",
+      "summary": "每期都是：真实集市场景 → 逐个动作拆解背后的心理 → 「记住×××，你觉得对吗?」收尾。固定的金句结构强化记忆点与系列辨识度。",
+      "tags": ["推断", "内容策略"],
+      "confidence": "inferred",
+      "evidence": [
+        { "bvid": "BV15whB65EbV", "field": "transcript", "quote": "记住,让力的前提是,让对方觉得东西值,你觉得对吗", "t": [91, 95] },
+        { "bvid": "BV1qVP4zAEbU", "field": "transcript", "quote": "面对挑体(挑剔)的买家,制造稀缺加紧迫,才是对症的良药。这不是套路,是人性。你觉得对吗?", "t": [68, 75] }
+      ]
+    },
+    {
+      "id": "i-040",
+      "categoryId": "ip-strategy",
+      "title": "自创品牌词「农村MBA」降低理解门槛",
+      "summary": "把摆摊卖菜包装成「农村MBA」商学院案例：一个自创概念，让「卖菜」这件事立刻有了知识含量和传播梗。",
+      "tags": ["推断", "定位"],
+      "confidence": "inferred",
+      "evidence": [
+        { "bvid": "BV1GGJP6JEtD", "field": "title", "quote": "跳蚤市场清场焚诀！如果你想赚点小钱，进来看农村MBA，学不会找我" },
+        { "bvid": "BV122okBgEN5", "field": "title", "quote": "看农村MBA，心眼论斤涨！" }
+      ]
+    },
+    {
+      "id": "i-041",
+      "categoryId": "ip-strategy",
+      "title": "人设一致性：真实场景 + 固定收尾梗",
+      "summary": "「视频均为真实场景发生，无摆拍非 AI」的自我声明 + 「我掉的每一根头发」「山水相逢日月为期」等固定收尾梗，构成稳定人设记忆。",
+      "tags": ["推断", "人设"],
+      "confidence": "inferred",
+      "evidence": [
+        { "bvid": "BV1o18i6GEv4", "field": "transcript", "quote": "这是ai替代不了的职业——我碎嘴子up又回来啦", "t": [0, 5] },
+        { "bvid": "BV1yt9FBkE4d", "field": "transcript", "quote": "我掉的每一根头发,都离不开你们的支持和鼓励。山水相逢日月为期,咱们下周见", "t": [85, 90] }
+      ]
+    },
+    {
+      "id": "i-042",
+      "categoryId": "ip-strategy",
+      "title": "数据验证：体系化内容的爆款规律",
+      "summary": "播放量最高的两条（成交术一 617 万、成交术五 414 万）正是方法论最完整、标题承诺最明确的核心集——体系化内容确实吃香。",
+      "tags": ["推断", "数据"],
+      "confidence": "inferred",
+      "evidence": [
+        { "bvid": "BV1hacgzNEMY", "field": "transcript", "quote": "（本条视频播放量 6,169,800，为全频道最高）", "t": [0, 3] },
+        { "bvid": "BV1hhApz3ExY", "field": "transcript", "quote": "（本条视频播放量 4,138,237，为全频道第二）", "t": [0, 3] }
+      ]
+    }
+  ],
+  "flowchart": {
+    "title": "摆摊做生意 · 场景应对决策树",
+    "subtitle": "遇到什么场景 → 做什么判断 → 做什么动作（傻瓜式教学，每一 branch 都能点回原视频）",
+    "root": "顾客来到摊前",
+    "scenarios": [
+      { "id": "s01", "scenario": "只问价，不下车/边走边问", "judge": "高效比价客户，光报价留不住", "action": "先抛基准价再放一个优惠台阶；不行就抛低价款或「可散称」试探真实需求", "refs": ["BV1hacgzNEMY", "BV1yt9FBkE4d"] },
+      { "id": "s02", "scenario": "在旁边打量、观望不说话", "judge": "在了解行情，越催走得越快", "action": "别盯着他，先和已成交的顾客聊天，把卖点「渗透」过去；离摊越近购买概率越高", "refs": ["BV15whB65EbV"] },
+      { "id": "s03", "scenario": "问完价摇头说「贵」", "judge": "嫌贵=价值还没被验证", "action": "不急降价！先放大品质差距/给证据，再给「多买优惠」把账算给他听", "refs": ["BV15whB65EbV", "BV1o18i6GEv4"] },
+      { "id": "s04", "scenario": "沉默不回应", "judge": "在判断期待值不值，不是拒绝", "action": "给样品制造期待；主动报个总价让他心里有数；千万别冷场", "refs": ["BV1o18i6GEv4", "BV1hhApz3ExY"] },
+      { "id": "s05", "scenario": "挑毛病 / 找茬", "judge": "砍价找借口，有顾虑=有机会", "action": "肯定他的认知、不贬竞品；先承认自己无伤大雅的小短处换信任，再反转成卖点", "refs": ["BV1GGJP6JEtD", "BV1o18i6GEv4"] },
+      { "id": "s06", "scenario": "明确砍价", "judge": "试探你的底价", "action": "把砍价变选择题：要便宜还是要品质？用添头/价值补偿替代降价；让利前提是让他觉得「值」", "refs": ["BV1hhApz3ExY", "BV1B96yBxE7c", "BV15whB65EbV"] },
+      { "id": "s07", "scenario": "拿竞品压价「别家更便宜」", "judge": "比价陷阱：他还停留=要的是性价比", "action": "不跟降！不否定竞品，只讲「货不同价不同」，用参照锚凸显自己划算", "refs": ["BV1SbFezhEDQ"] },
+      { "id": "s08", "scenario": "犹豫不决，一直不下单", "judge": "决策卡壳", "action": "把「要不要」换成「要多少」；推荐合理购买量快速成交；叠加稀缺话术「再不买就没了」", "refs": ["BV1hbQtBZENk", "BV1YXVg69EmS"] },
+      { "id": "s09", "scenario": "认可品质但迟迟不买", "judge": "缺临门一脚", "action": "限量+紧迫；他回头时节奏要快，直接问「要几块钱的」默认成交", "refs": ["BV1YXVg69EmS"] },
+      { "id": "s10", "scenario": "带着家人/同伴", "judge": "话事人在场", "action": "先拿下话事人：肯定他的眼光=守护他的面子；拿不定主意的人会自己回来", "refs": ["BV1ucwXznEus"] },
+      { "id": "s11", "scenario": "带着孩子", "judge": "父母对孩子从不抠门", "action": "把话题引到孩子身上；孩子哭闹的「意外」就是黄金时间，现场试吃引导", "refs": ["BV1hhApz3ExY", "BV122okBgEN5"] },
+      { "id": "s12", "scenario": "大单客户 / 问有没有货", "judge": "有大单条件，别硬劝", "action": "顺着他的思路放大成交：按袋按箱算账；「还有没有」这句话决定这单卖多少", "refs": ["BV17cdGBiEGT"] },
+      { "id": "s13", "scenario": "买完又回来问别的菜", "judge": "初步信任已建立", "action": "顺势连带推荐：借着刚才的优惠价「跟着大户买」，成交率高得多", "refs": ["BV1hbQtBZENk"] },
+      { "id": "s14", "scenario": "嘴上说不要，身体在挑挑拣拣", "judge": "嘴骗人动作不骗人", "action": "拒绝后仍沟通=内心矛盾，给个留下的理由：更方便、更省时间", "refs": ["BV1iBcrzaEUx"] }
+    ],
+    "buyerBranch": {
+      "label": "买家视角：自己买东西怎么不被坑、怎么砍价",
+      "scenarios": [
+        { "id": "b01", "scenario": "卖家让你先出价", "judge": "他在套你的底价", "action": "绝不先报价；用夸张的价反向施压，或用「再逛逛」制造竞争压力", "refs": ["BV1RVADz4ESN"] },
+        { "id": "b02", "scenario": "想砍价但没有理由", "judge": "挑毛病就是砍价的借口", "action": "先挑次找借口，用多买当筹码换低价，打包整体加码倒逼单价", "refs": ["BV1hFzvBmEv5"] },
+        { "id": "b03", "scenario": "价格僵持不下", "judge": "原议价规则失灵", "action": "议价重置：抛极致低价重开规则；最后抛折中价+复购承诺收尾", "refs": ["BV1hFzvBmEv5", "BV1RVADz4ESN"] },
+        { "id": "b04", "scenario": "摊主说「这是最低价了」", "judge": "多数不是最低价", "action": "释放购买信号但不报底价；最后亮心理价=表态不再砍，换最后让利", "refs": ["BV1RVADz4ESN"] }
+      ]
+    }
+  }
+}

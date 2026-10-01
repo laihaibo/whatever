@@ -1,0 +1,635 @@
+{
+  "meta": {
+    "source": "https://b23.tv/ud5Icrn",
+    "mid": "287487019",
+    "uname": "嘴比饺子馅儿碎",
+    "total": 23,
+    "fetchedAt": "2026-10-01T14:19:22.577Z",
+    "method": "space page DOM via real browser (bvid list) + /x/web-interface/view per-bvid enrichment",
+    "note": "/x/space/wbi/arc/search 对匿名请求存在强风控(-352/-412)，故采用浏览器旁路提取清单；数据为公开接口采集的标题/简介/统计，不含视频正文。空间页显示视频 23 + 图文 6 = 投稿 29，card 接口 archive_count=24，两者与实际可见视频数 23 的差异可能来自隐藏/下架稿件。",
+    "failed": []
+  },
+  "videos": [
+    {
+      "bvid": "BV15whB65EbV",
+      "aid": 117309129621782,
+      "title": "揭秘集市摊主的消费心理学【借差衬优】——大学生就业指导之返乡摆摊卖菜",
+      "description": "非对称优势，是指特意新增第三个选项（诱饵），它全方位弱于主推款，但不完全弱于竞品；诱饵出现是唯一目的，就是衬托主推产品，从而改变人的偏好。",
+      "tname": null,
+      "duration": 96,
+      "pubdate": 1789995495,
+      "pubdateISO": "2026-09-21T12:58:15.000Z",
+      "ctime": 1789995495,
+      "ctimeISO": "2026-09-21T12:58:15.000Z",
+      "stat": {
+        "view": 13583,
+        "danmaku": 93,
+        "reply": 49,
+        "favorite": 463,
+        "coin": 101,
+        "share": 34,
+        "like": 1382
+      },
+      "pic": "http://i2.hdslb.com/bfs/archive/e90b7b7bf9955c06db79f4b6af42aad61cf710d6.jpg",
+      "url": "https://www.bilibili.com/video/BV15whB65EbV",
+      "owner": {
+        "mid": 287487019,
+        "name": "嘴比饺子馅儿碎"
+      }
+    },
+    {
+      "bvid": "BV1o18i6GEv4",
+      "aid": 117133287621649,
+      "title": "这是ai替代不了的职业——我碎嘴子up又回来啦",
+      "description": "回归先来期干货，给自己找找感觉",
+      "tname": null,
+      "duration": 88,
+      "pubdate": 1787312240,
+      "pubdateISO": "2026-08-21T11:37:20.000Z",
+      "ctime": 1787312240,
+      "ctimeISO": "2026-08-21T11:37:20.000Z",
+      "stat": {
+        "view": 302373,
+        "danmaku": 169,
+        "reply": 195,
+        "favorite": 5919,
+        "coin": 353,
+        "share": 166,
+        "like": 22771
+      },
+      "pic": "http://i1.hdslb.com/bfs/archive/9617249ffc9e12fa5fd85bd0b8287b4077d1b3a1.jpg",
+      "url": "https://www.bilibili.com/video/BV1o18i6GEv4",
+      "owner": {
+        "mid": 287487019,
+        "name": "嘴比饺子馅儿碎"
+      }
+    },
+    {
+      "bvid": "BV1GGJP6JEtD",
+      "aid": 116748703499948,
+      "title": "跳蚤市场清场焚诀！如果你想赚点小钱，进来看农村MBA，学不会找我",
+      "description": "本期依旧干货，销售本身是一个很大的课题，有的同学看到的是卖菜，有的同学看到销售的一些底层逻辑，当然也有一些心理，营销等等包罗万象。希望我的视频能给大家带来业绩、思路、或者启发。",
+      "tname": null,
+      "duration": 82,
+      "pubdate": 1781444169,
+      "pubdateISO": "2026-06-14T13:36:09.000Z",
+      "ctime": 1781444169,
+      "ctimeISO": "2026-06-14T13:36:09.000Z",
+      "stat": {
+        "view": 100724,
+        "danmaku": 353,
+        "reply": 144,
+        "favorite": 3501,
+        "coin": 232,
+        "share": 124,
+        "like": 9720
+      },
+      "pic": "http://i2.hdslb.com/bfs/archive/0d3cc094352828600108fdf454d8f723a7384b9b.jpg",
+      "url": "https://www.bilibili.com/video/BV1GGJP6JEtD",
+      "owner": {
+        "mid": 287487019,
+        "name": "嘴比饺子馅儿碎"
+      }
+    },
+    {
+      "bvid": "BV1YXVg69EmS",
+      "aid": 116661411644087,
+      "title": "【稀缺】——农村MBA大学生就业指导之返乡摆摊卖菜（十）",
+      "description": "本期视频给之前没看懂的同学做个注解，今天想说的是，面试可以理解成为一种自身劳动价值的“销售”的过程，HR就是你的顾客，而稀缺是你能拿下offer的利器，有过面试失败经历的同学不妨回想，是不是这样 。阿婆发视频不是鼓励大家回老家种地，而且希望大家能正视销售这个工作，把技巧应用到生活各处。先说这些，哇咔咔，向健康的市场环境又迈进了一小步，嘻咯咯咯咯咯咯",
+      "tname": null,
+      "duration": 126,
+      "pubdate": 1780115686,
+      "pubdateISO": "2026-05-30T04:34:46.000Z",
+      "ctime": 1780112141,
+      "ctimeISO": "2026-05-30T03:35:41.000Z",
+      "stat": {
+        "view": 120514,
+        "danmaku": 316,
+        "reply": 120,
+        "favorite": 643,
+        "coin": 101,
+        "share": 87,
+        "like": 6130
+      },
+      "pic": "http://i0.hdslb.com/bfs/archive/13fdf3d5e87c43d7bbdab10b58a138aa37502f93.jpg",
+      "url": "https://www.bilibili.com/video/BV1YXVg69EmS",
+      "owner": {
+        "mid": 287487019,
+        "name": "嘴比饺子馅儿碎"
+      }
+    },
+    {
+      "bvid": "BV17cdGBiEGT",
+      "aid": 116539139293936,
+      "title": "大学生就业指导之大客户成交法——需求放大(农村MBA集市成交术九）",
+      "description": "本期视频依旧干货！经营中，人人都想成交大单，但大客户竞争异常激烈，能否拿下，取决于能否在沟通过程中，找到线索，所以和大客户聊天，不是介绍你的产品，不是诉说你的不容易，要聊对方感兴趣的，从对方的言语中，获取你需要的线索。你准备好拿下你的“大单”了嘛，嘻咯咯咯咯咯咯",
+      "tname": null,
+      "duration": 103,
+      "pubdate": 1778246495,
+      "pubdateISO": "2026-05-08T13:21:35.000Z",
+      "ctime": 1778246495,
+      "ctimeISO": "2026-05-08T13:21:35.000Z",
+      "stat": {
+        "view": 559344,
+        "danmaku": 421,
+        "reply": 729,
+        "favorite": 8914,
+        "coin": 825,
+        "share": 550,
+        "like": 43322
+      },
+      "pic": "http://i2.hdslb.com/bfs/archive/059bf766a764550c06e1ab1874acf1d8ae22d7d6.jpg",
+      "url": "https://www.bilibili.com/video/BV17cdGBiEGT",
+      "owner": {
+        "mid": 287487019,
+        "name": "嘴比饺子馅儿碎"
+      }
+    },
+    {
+      "bvid": "BV122okBgEN5",
+      "aid": 116477181037087,
+      "title": "大学生就业指导之农村摆摊卖菜——黄金时间（集市成交术八），看农村MBA，心眼论斤涨！",
+      "description": "当你产生“心动”的感觉时，就是消费/销售过程里所谓的“黄金时间”，交易成交与否则取决于你能都给出/抓住这个时机。（心动会有很多种，可以是为父母，为自己，为闺蜜，为哥们，当然也会为孩子）。相对专业的定义可以理解为，在“信息收集”后进入“评估选择”阶段时，消费者对产品的兴趣和注意力处于高峰，这其实就是视频中说的“黄金时间”，此时销售人员的引导更容易影响决策。",
+      "tname": null,
+      "duration": 91,
+      "pubdate": 1777300818,
+      "pubdateISO": "2026-04-27T14:40:18.000Z",
+      "ctime": 1777300818,
+      "ctimeISO": "2026-04-27T14:40:18.000Z",
+      "stat": {
+        "view": 257377,
+        "danmaku": 383,
+        "reply": 361,
+        "favorite": 3409,
+        "coin": 391,
+        "share": 301,
+        "like": 26014
+      },
+      "pic": "http://i2.hdslb.com/bfs/archive/8dfca9997ca6ec1910d14890564f76b4a2cba022.jpg",
+      "url": "https://www.bilibili.com/video/BV122okBgEN5",
+      "owner": {
+        "mid": 287487019,
+        "name": "嘴比饺子馅儿碎"
+      }
+    },
+    {
+      "bvid": "BV1hbQtBZENk",
+      "aid": 116397724206136,
+      "title": "大学生就业指导之返乡摆摊卖菜（集市成交术七【借利打利】）——看完涨两斤心眼儿的“农村MBA”",
+      "description": "无论创业还是工作，初接触社会基本都离不开销售，（个人认为，面试只是自我销售的的另一种形式）之前讲过销售的本质是解决对方的问题，那么假如你的产品所谓卖点，在不那么具备差异化优势的时候，就要重点考虑，如何让对方获“利”。嘻咯咯咯咯，健康的市场环境又进一步啦(*v*)",
+      "tname": null,
+      "duration": 96,
+      "pubdate": 1776088401,
+      "pubdateISO": "2026-04-13T13:53:21.000Z",
+      "ctime": 1776088401,
+      "ctimeISO": "2026-04-13T13:53:21.000Z",
+      "stat": {
+        "view": 221297,
+        "danmaku": 146,
+        "reply": 185,
+        "favorite": 1818,
+        "coin": 294,
+        "share": 272,
+        "like": 14380
+      },
+      "pic": "http://i1.hdslb.com/bfs/archive/21f2d076a0dc67b3bf820e6ffc8da60c6486deed.jpg",
+      "url": "https://www.bilibili.com/video/BV1hbQtBZENk",
+      "owner": {
+        "mid": 287487019,
+        "name": "嘴比饺子馅儿碎"
+      }
+    },
+    {
+      "bvid": "BV1yt9FBkE4d",
+      "aid": 116335296252773,
+      "title": "大学生就业指导之集市生存法则——如何控场？（返乡摆摊农村MBA实战拆解）",
+      "description": "不论面对什么样的顾客，交易的本质是帮顾客解决问题，而成交的关键则是打消对方顾虑，所谓双赢，是指双方同时获得“满足感”，而不是谁让谁吃了亏。商战下乡，嘻咯咯咯咯，健康的市场环境又进了一步^-^",
+      "tname": null,
+      "duration": 91,
+      "pubdate": 1775135874,
+      "pubdateISO": "2026-04-02T13:17:54.000Z",
+      "ctime": 1775135874,
+      "ctimeISO": "2026-04-02T13:17:54.000Z",
+      "stat": {
+        "view": 539190,
+        "danmaku": 153,
+        "reply": 575,
+        "favorite": 3513,
+        "coin": 591,
+        "share": 525,
+        "like": 26617
+      },
+      "pic": "http://i1.hdslb.com/bfs/archive/bd9a755782c39444c0b144d29c3dd6550d01c174.jpg",
+      "url": "https://www.bilibili.com/video/BV1yt9FBkE4d",
+      "owner": {
+        "mid": 287487019,
+        "name": "嘴比饺子馅儿碎"
+      }
+    },
+    {
+      "bvid": "BV1hhApz3ExY",
+      "aid": 116261677697985,
+      "title": "大学生就业指导之返乡摆摊卖菜（农村MBA）集市成交术五",
+      "description": "消费者在进行购买决策的第一步，就是需求的判别，很多时候顾客并不清晰自己的需求，所以我们要给对方创造使用场景，以此来去唤醒对方，有了需求才会有交易的产生。买东西的时候也是一样，先明确自己需要什么再下单，多快好省美滋滋，商家也减少沟通中的拉扯，提升成交率，健康的市场又进步啦。",
+      "tname": null,
+      "duration": 83,
+      "pubdate": 1774012628,
+      "pubdateISO": "2026-03-20T13:17:08.000Z",
+      "ctime": 1774012628,
+      "ctimeISO": "2026-03-20T13:17:08.000Z",
+      "stat": {
+        "view": 4138237,
+        "danmaku": 728,
+        "reply": 3583,
+        "favorite": 71909,
+        "coin": 8984,
+        "share": 9791,
+        "like": 311428
+      },
+      "pic": "http://i2.hdslb.com/bfs/archive/a895f9d288db90c0804897e815b8e77e5aff9599.jpg",
+      "url": "https://www.bilibili.com/video/BV1hhApz3ExY",
+      "owner": {
+        "mid": 287487019,
+        "name": "嘴比饺子馅儿碎"
+      }
+    },
+    {
+      "bvid": "BV1ucwXznEus",
+      "aid": 116242451071021,
+      "title": "大学生返乡创业指导：销售篇——射人先射马（农村MBA）",
+      "description": "买东西时经常有朋友问我如何如何，给参考意见可以，但当出现“买不买”这种选择题时，就会出现“决策外包”的现象，本质其实是一种风险移交。",
+      "tname": null,
+      "duration": 93,
+      "pubdate": 1773719097,
+      "pubdateISO": "2026-03-17T03:44:57.000Z",
+      "ctime": 1773719097,
+      "ctimeISO": "2026-03-17T03:44:57.000Z",
+      "stat": {
+        "view": 131082,
+        "danmaku": 122,
+        "reply": 159,
+        "favorite": 1679,
+        "coin": 297,
+        "share": 257,
+        "like": 9917
+      },
+      "pic": "http://i2.hdslb.com/bfs/archive/f1d6491ddf9a9172583ab1226df0cc2427f1b15e.jpg",
+      "url": "https://www.bilibili.com/video/BV1ucwXznEus",
+      "owner": {
+        "mid": 287487019,
+        "name": "嘴比饺子馅儿碎"
+      }
+    },
+    {
+      "bvid": "BV1iBcrzaEUx",
+      "aid": 116216396120520,
+      "title": "大学生就业指导之返乡摆摊卖菜（农村MBA）集市成交术三",
+      "description": "很多时候，客户的拒绝，暗藏着的是对方的顾虑，而这个“顾虑”就是成交的关键。品质、价格、售后、决策，交易过程中，不放过任何一个细节，客户满意，自然会再来找你~",
+      "tname": null,
+      "duration": 87,
+      "pubdate": 1773321688,
+      "pubdateISO": "2026-03-12T13:21:28.000Z",
+      "ctime": 1773321688,
+      "ctimeISO": "2026-03-12T13:21:28.000Z",
+      "stat": {
+        "view": 119706,
+        "danmaku": 36,
+        "reply": 178,
+        "favorite": 1774,
+        "coin": 342,
+        "share": 282,
+        "like": 10220
+      },
+      "pic": "http://i1.hdslb.com/bfs/archive/e25f81a21b300075dd756ca87ffdb9dadec9b7f0.jpg",
+      "url": "https://www.bilibili.com/video/BV1iBcrzaEUx",
+      "owner": {
+        "mid": 287487019,
+        "name": "嘴比饺子馅儿碎"
+      }
+    },
+    {
+      "bvid": "BV1qVP4zAEbU",
+      "aid": 116182589900996,
+      "title": "大学生就业指导之返乡摆摊卖菜（学会这招赢麻了）集市成交术二",
+      "description": "本期视频又是纯纯的经验干货分享！如果你想创业，摆摊是最简单好上手的途径，看完视频，带你找到答案！",
+      "tname": null,
+      "duration": 84,
+      "pubdate": 1772805847,
+      "pubdateISO": "2026-03-06T14:04:07.000Z",
+      "ctime": 1772805847,
+      "ctimeISO": "2026-03-06T14:04:07.000Z",
+      "stat": {
+        "view": 161028,
+        "danmaku": 58,
+        "reply": 322,
+        "favorite": 3874,
+        "coin": 504,
+        "share": 305,
+        "like": 16260
+      },
+      "pic": "http://i2.hdslb.com/bfs/archive/7d2c8a0d3fadcae516f1b3bd5906de2aa7157df4.jpg",
+      "url": "https://www.bilibili.com/video/BV1qVP4zAEbU",
+      "owner": {
+        "mid": 287487019,
+        "name": "嘴比饺子馅儿碎"
+      }
+    },
+    {
+      "bvid": "BV1RVADz4ESN",
+      "aid": 116143012511810,
+      "title": "大学生就业指导之返乡过年（砍价篇）春节番外",
+      "description": "希望这期视频对于年轻的朋友们，既能掌握砍价小技巧，又能了解反推交易的深层逻辑，对创业起到帮助。\n购物时的价格拉扯，本质是双方对价值的判断。卖方想保本要利润，买方想省钱拿好货，没有谁对谁错，找到那个平衡点，交易才能顺畅达成。",
+      "tname": null,
+      "duration": 132,
+      "pubdate": 1772201812,
+      "pubdateISO": "2026-02-27T14:16:52.000Z",
+      "ctime": 1772201813,
+      "ctimeISO": "2026-02-27T14:16:53.000Z",
+      "stat": {
+        "view": 210528,
+        "danmaku": 79,
+        "reply": 468,
+        "favorite": 3128,
+        "coin": 353,
+        "share": 654,
+        "like": 9162
+      },
+      "pic": "http://i2.hdslb.com/bfs/archive/74d646d8e41f94592f157975edd6bea5b6e35de8.jpg",
+      "url": "https://www.bilibili.com/video/BV1RVADz4ESN",
+      "owner": {
+        "mid": 287487019,
+        "name": "嘴比饺子馅儿碎"
+      }
+    },
+    {
+      "bvid": "BV1hacgzNEMY",
+      "aid": 116040805650363,
+      "title": "大学生就业指导之返乡摆摊卖菜（集市成交术一）",
+      "description": "本期视频纯经验干货分享！如果你想创业，摆摊是最简单好上手的途径，过程中一定会遇到犹豫不决的客户，甚至骑车问价，还没说完话人就跑出二里地。如果你刚好困惑，看完视频，带你找到答案！",
+      "tname": null,
+      "duration": 76,
+      "pubdate": 1770642385,
+      "pubdateISO": "2026-02-09T13:06:25.000Z",
+      "ctime": 1770642385,
+      "ctimeISO": "2026-02-09T13:06:25.000Z",
+      "stat": {
+        "view": 6169800,
+        "danmaku": 636,
+        "reply": 5187,
+        "favorite": 80443,
+        "coin": 11105,
+        "share": 8541,
+        "like": 398529
+      },
+      "pic": "http://i0.hdslb.com/bfs/archive/c725395a119eb2512230fbe47ff5e05e46f87be0.jpg",
+      "url": "https://www.bilibili.com/video/BV1hacgzNEMY",
+      "owner": {
+        "mid": 287487019,
+        "name": "嘴比饺子馅儿碎"
+      }
+    },
+    {
+      "bvid": "BV1SbFezhEDQ",
+      "aid": 116018441684935,
+      "title": "大学生返乡就业指导之摆摊卖菜（议价篇——警惕“比价陷阱”）",
+      "description": "作为被动面对价格的一方，所有因对方刻意设计价格规则导致的不利情况，都叫比价陷阱。区别在于设计价格规则的人的本心，消费过程中请注意甄别，保护好兜兜。",
+      "tname": null,
+      "duration": 119,
+      "pubdate": 1770301145,
+      "pubdateISO": "2026-02-05T14:19:05.000Z",
+      "ctime": 1770301145,
+      "ctimeISO": "2026-02-05T14:19:05.000Z",
+      "stat": {
+        "view": 210466,
+        "danmaku": 78,
+        "reply": 269,
+        "favorite": 3658,
+        "coin": 524,
+        "share": 640,
+        "like": 14517
+      },
+      "pic": "http://i1.hdslb.com/bfs/archive/96195df073ca16b669fc96c14f550e74e24cd61a.jpg",
+      "url": "https://www.bilibili.com/video/BV1SbFezhEDQ",
+      "owner": {
+        "mid": 287487019,
+        "name": "嘴比饺子馅儿碎"
+      }
+    },
+    {
+      "bvid": "BV1B96yBxE7c",
+      "aid": 115989735868300,
+      "title": "大学生就业指导之返乡摆摊卖菜（第二弹）",
+      "description": "峰终定律的核心是人们对一段体验的记忆，并不取决于体验过程的全部细节或平均感受，而是主要由两个关键节点决定。峰（peak）&终（end）",
+      "tname": null,
+      "duration": 123,
+      "pubdate": 1769863066,
+      "pubdateISO": "2026-01-31T12:37:46.000Z",
+      "ctime": 1769863066,
+      "ctimeISO": "2026-01-31T12:37:46.000Z",
+      "stat": {
+        "view": 136930,
+        "danmaku": 28,
+        "reply": 295,
+        "favorite": 3787,
+        "coin": 686,
+        "share": 556,
+        "like": 14987
+      },
+      "pic": "http://i1.hdslb.com/bfs/archive/388c7569bb6486864546d9f7eac6729bcc6e7e9e.jpg",
+      "url": "https://www.bilibili.com/video/BV1B96yBxE7c",
+      "owner": {
+        "mid": 287487019,
+        "name": "嘴比饺子馅儿碎"
+      }
+    },
+    {
+      "bvid": "BV1hFzvBmEv5",
+      "aid": 115961281709233,
+      "title": "大学生回村过年干货之买的能比卖的精",
+      "description": "议价重置就是打破原有议价规则，重新建立全新议价基准、沟通机制或利益分配模式，实现谈判关系或交易价格的重新校准。",
+      "tname": null,
+      "duration": 63,
+      "pubdate": 1769428930,
+      "pubdateISO": "2026-01-26T12:02:10.000Z",
+      "ctime": 1769428930,
+      "ctimeISO": "2026-01-26T12:02:10.000Z",
+      "stat": {
+        "view": 46554,
+        "danmaku": 19,
+        "reply": 162,
+        "favorite": 936,
+        "coin": 186,
+        "share": 255,
+        "like": 3681
+      },
+      "pic": "http://i1.hdslb.com/bfs/archive/5b1e5960f5ca6bcc89aa1d8bd723647817fac4a1.jpg",
+      "url": "https://www.bilibili.com/video/BV1hFzvBmEv5",
+      "owner": {
+        "mid": 287487019,
+        "name": "嘴比饺子馅儿碎"
+      }
+    },
+    {
+      "bvid": "BV1aYzkBMEqg",
+      "aid": 115950091239861,
+      "title": "大学生就业指导之返乡摆摊卖菜",
+      "description": "行为经济学发现，普通人的风险决策极易受情绪偏差影响，而情绪波动的根源，是对 “未知风险” 的失控感。所谓知己知彼，买东西不亏，买的不一定没有卖的精",
+      "tname": null,
+      "duration": 109,
+      "pubdate": 1769258207,
+      "pubdateISO": "2026-01-24T12:36:47.000Z",
+      "ctime": 1769258207,
+      "ctimeISO": "2026-01-24T12:36:47.000Z",
+      "stat": {
+        "view": 611520,
+        "danmaku": 275,
+        "reply": 1287,
+        "favorite": 33289,
+        "coin": 3890,
+        "share": 3296,
+        "like": 83685
+      },
+      "pic": "http://i2.hdslb.com/bfs/archive/933af135e5b1b62a5a27241f57093ad8adbb1c43.jpg",
+      "url": "https://www.bilibili.com/video/BV1aYzkBMEqg",
+      "owner": {
+        "mid": 287487019,
+        "name": "嘴比饺子馅儿碎"
+      }
+    },
+    {
+      "bvid": "BV17FkjB2EPH",
+      "aid": 115925663745778,
+      "title": "大学生就业指导之农村大集卖菜版",
+      "description": "在产品多元的情况下，树立标杆产品做对比，可有效提升现金流产品销量",
+      "tname": null,
+      "duration": 66,
+      "pubdate": 1768885522,
+      "pubdateISO": "2026-01-20T05:05:22.000Z",
+      "ctime": 1768885522,
+      "ctimeISO": "2026-01-20T05:05:22.000Z",
+      "stat": {
+        "view": 40935,
+        "danmaku": 17,
+        "reply": 89,
+        "favorite": 661,
+        "coin": 148,
+        "share": 156,
+        "like": 3217
+      },
+      "pic": "http://i1.hdslb.com/bfs/archive/11a42d8640f2446cc58906a04cc680abe7e8ef68.jpg",
+      "url": "https://www.bilibili.com/video/BV17FkjB2EPH",
+      "owner": {
+        "mid": 287487019,
+        "name": "嘴比饺子馅儿碎"
+      }
+    },
+    {
+      "bvid": "BV1u6kMBjErN",
+      "aid": 115921955852242,
+      "title": "高支配性人格申论案例之农村饭桌风云",
+      "description": "高支配性人格是一种以支配他人为主要目的、以控制他人为手段的人格类型",
+      "tname": null,
+      "duration": 83,
+      "pubdate": 1768828902,
+      "pubdateISO": "2026-01-19T13:21:42.000Z",
+      "ctime": 1768828902,
+      "ctimeISO": "2026-01-19T13:21:42.000Z",
+      "stat": {
+        "view": 94807,
+        "danmaku": 10,
+        "reply": 262,
+        "favorite": 2696,
+        "coin": 163,
+        "share": 180,
+        "like": 5397
+      },
+      "pic": "http://i2.hdslb.com/bfs/archive/77d43ac7376d498d3ea966f7472c51bc74c8d8b9.jpg",
+      "url": "https://www.bilibili.com/video/BV1u6kMBjErN",
+      "owner": {
+        "mid": 287487019,
+        "name": "嘴比饺子馅儿碎"
+      }
+    },
+    {
+      "bvid": "BV1ctrQBnExi",
+      "aid": 115910782223450,
+      "title": "大学生就业指导之农村大集卖菜版",
+      "description": "反向锚定——是锚定效应的反向应用，指打破人们对初始“锚点”（如价格、标准）的依赖，通过设置新的参照标准，影响决策判断的行为模式。",
+      "tname": null,
+      "duration": 92,
+      "pubdate": 1768658296,
+      "pubdateISO": "2026-01-17T13:58:16.000Z",
+      "ctime": 1768658296,
+      "ctimeISO": "2026-01-17T13:58:16.000Z",
+      "stat": {
+        "view": 29921,
+        "danmaku": 26,
+        "reply": 88,
+        "favorite": 440,
+        "coin": 131,
+        "share": 87,
+        "like": 2213
+      },
+      "pic": "http://i0.hdslb.com/bfs/archive/63c82596feea2085cb7a08b183595a7681973d89.jpg",
+      "url": "https://www.bilibili.com/video/BV1ctrQBnExi",
+      "owner": {
+        "mid": 287487019,
+        "name": "嘴比饺子馅儿碎"
+      }
+    },
+    {
+      "bvid": "BV1i3kFBPEmR",
+      "aid": 115899608664390,
+      "title": "大学生返乡就业指导之农村卖菜版",
+      "description": "锚定效应——是指人们在做决策时，会过度依赖最先接触到的信息（即 “锚点”），并以此为基准调整后续判断，最终的决策结果会被这个初",
+      "tname": null,
+      "duration": 87,
+      "pubdate": 1768487770,
+      "pubdateISO": "2026-01-15T14:36:10.000Z",
+      "ctime": 1768487770,
+      "ctimeISO": "2026-01-15T14:36:10.000Z",
+      "stat": {
+        "view": 222521,
+        "danmaku": 39,
+        "reply": 374,
+        "favorite": 3918,
+        "coin": 303,
+        "share": 309,
+        "like": 16002
+      },
+      "pic": "http://i2.hdslb.com/bfs/archive/aa83202051cd8d43a9c560a79504e1cd28f493d7.jpg",
+      "url": "https://www.bilibili.com/video/BV1i3kFBPEmR",
+      "owner": {
+        "mid": 287487019,
+        "name": "嘴比饺子馅儿碎"
+      }
+    },
+    {
+      "bvid": "BV1etmtB9EtL",
+      "aid": 115695647984218,
+      "title": "海贼王船上，勇敢的战士乌索普大人说：我从来不相信，普通的命，只能普通收场——AI大碟《出航》",
+      "description": "每个人都能找到属于自己的ONE PIECE！战斗吧，FIRE BIRD STAR！",
+      "tname": null,
+      "duration": 202,
+      "pubdate": 1765375685,
+      "pubdateISO": "2025-12-10T14:08:05.000Z",
+      "ctime": 1765375685,
+      "ctimeISO": "2025-12-10T14:08:05.000Z",
+      "stat": {
+        "view": 7379,
+        "danmaku": 5,
+        "reply": 47,
+        "favorite": 45,
+        "coin": 42,
+        "share": 8,
+        "like": 282
+      },
+      "pic": "http://i1.hdslb.com/bfs/archive/eb73d2d403eafd95ec42cc9656825ca3495645f5.jpg",
+      "url": "https://www.bilibili.com/video/BV1etmtB9EtL",
+      "owner": {
+        "mid": 287487019,
+        "name": "嘴比饺子馅儿碎"
+      }
+    }
+  ]
+}

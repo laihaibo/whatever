@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro SC", "PingFang SC",
+    "HarmonyOS Sans SC", "Microsoft YaHei", "Segoe UI", "Noto Sans SC", sans-serif;
+  --font-serif: ui-serif, Georgia, "Songti SC", serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: #1e293b;
+  /* Apple Liquid Glass 底色：柔和多色渐变，忌实心色块 */
+  background:
+    radial-gradient(1200px 800px at 8% -10%, rgba(147, 197, 253, 0.45), transparent 60%),
+    radial-gradient(1000px 700px at 95% 5%, rgba(249, 168, 212, 0.4), transparent 60%),
+    radial-gradient(900px 800px at 45% 110%, rgba(167, 243, 208, 0.42), transparent 60%),
+    radial-gradient(800px 600px at 80% 85%, rgba(253, 230, 138, 0.35), transparent 60%),
+    linear-gradient(160deg, #f0f9ff 0%, #faf5ff 45%, #fff7ed 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+@layer components {
+  /* 液态玻璃面板：backdrop-blur + 半透明白 + 白色细边框 + 内高光 + 柔投影 */
+  .glass {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.62), rgba(255, 255, 255, 0.36));
+    backdrop-filter: blur(24px) saturate(170%);
+    -webkit-backdrop-filter: blur(24px) saturate(170%);
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    box-shadow:
+      0 8px 32px rgba(31, 38, 135, 0.08),
+      0 1px 2px rgba(31, 38, 135, 0.04),
+      inset 0 1px 0 rgba(255, 255, 255, 0.75);
+    border-radius: 1.5rem;
+  }
+
+  .glass-chip {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.3));
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow:
+      0 2px 10px rgba(31, 38, 135, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    border-radius: 9999px;
+  }
+
+  .glass-strong {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.74), rgba(255, 255, 255, 0.5));
+    backdrop-filter: blur(32px) saturate(180%);
+    -webkit-backdrop-filter: blur(32px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    box-shadow:
+      0 16px 48px rgba(31, 38, 135, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.85);
+    border-radius: 2rem;
+  }
+
+  /* 卡片 hover 时的镜面高光扫过 */
+  .glass-sheen {
+    position: relative;
+    overflow: hidden;
+  }
+  .glass-sheen::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      105deg,
+      transparent 40%,
+      rgba(255, 255, 255, 0.5) 50%,
+      transparent 60%
+    );
+    transform: translateX(-120%);
+    transition: transform 0.9s ease;
+    pointer-events: none;
+  }
+  .glass-sheen:hover::before {
+    transform: translateX(120%);
+  }
+}
+
+/* 细滚动条 */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.28);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::selection {
+  background: rgba(59, 130, 246, 0.18);
+}

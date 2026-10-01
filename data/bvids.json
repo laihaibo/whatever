@@ -1,0 +1,30 @@
+{
+  "note": "浏览器打开 space.bilibili.com/287487019/upload/video 后从渲染 DOM 提取的视频卡片（真实浏览器指纹通过风控）；统计数据为卡片展示值，最终以 view 接口富化结果为准",
+  "extractedAt": "2026-10-01",
+  "pageVideoCount": 23,
+  "cards": [
+    { "bvid": "BV15whB65EbV", "title": "揭秘集市摊主的消费心理学【借差衬优】——大学生就业指导之返乡摆摊卖菜" },
+    { "bvid": "BV1o18i6GEv4", "title": "这是ai替代不了的职业——我碎嘴子up又回来啦" },
+    { "bvid": "BV1GGJP6JEtD", "title": "跳蚤市场清场焚诀！如果你想赚点小钱，进来看农村MBA，学不会找我" },
+    { "bvid": "BV1YXVg69EmS", "title": "【稀缺】——农村MBA大学生就业指导之返乡摆摊卖菜（十）" },
+    { "bvid": "BV17cdGBiEGT", "title": "大学生就业指导之大客户成交法——需求放大(农村MBA集市成交术九）" },
+    { "bvid": "BV122okBgEN5", "title": "大学生就业指导之农村摆摊卖菜——黄金时间（集市成交术八），看农村MBA，心眼论斤涨！" },
+    { "bvid": "BV1hbQtBZENk", "title": "大学生就业指导之返乡摆摊卖菜（集市成交术七【借利打利】）——看完涨两斤心眼儿的“农村MBA”" },
+    { "bvid": "BV1yt9FBkE4d", "title": "大学生就业指导之集市生存法则——如何控场？（返乡摆摊农村MBA实战拆解）" },
+    { "bvid": "BV1hhApz3ExY", "title": "大学生就业指导之返乡摆摊卖菜（农村MBA）集市成交术五" },
+    { "bvid": "BV1ucwXznEus", "title": "大学生返乡创业指导：销售篇——射人先射马（农村MBA）" },
+    { "bvid": "BV1iBcrzaEUx", "title": "大学生就业指导之返乡摆摊卖菜（农村MBA）集市成交术三" },
+    { "bvid": "BV1qVP4zAEbU", "title": "大学生就业指导之返乡摆摊卖菜（学会这招赢麻了）集市成交术二" },
+    { "bvid": "BV1RVADz4ESN", "title": "大学生就业指导之返乡过年（砍价篇）春节番外" },
+    { "bvid": "BV1hacgzNEMY", "title": "大学生就业指导之返乡摆摊卖菜（集市成交术一）" },
+    { "bvid": "BV1SbFezhEDQ", "title": "大学生返乡就业指导之摆摊卖菜（议价篇——警惕“比价陷阱”）" },
+    { "bvid": "BV1B96yBxE7c", "title": "大学生就业指导之返乡摆摊卖菜（第二弹）" },
+    { "bvid": "BV1hFzvBmEv5", "title": "大学生回村过年干货之买的能比卖的精" },
+    { "bvid": "BV1aYzkBMEqg", "title": "大学生就业指导之返乡摆摊卖菜" },
+    { "bvid": "BV17FkjB2EPH", "title": "大学生就业指导之农村大集卖菜版" },
+    { "bvid": "BV1u6kMBjErN", "title": "高支配性人格申论案例之农村饭桌风云" },
+    { "bvid": "BV1ctrQBnExi", "title": "大学生就业指导之农村大集卖菜版" },
+    { "bvid": "BV1i3kFBPEmR", "title": "大学生返乡就业指导之农村卖菜版" },
+    { "bvid": "BV1etmtB9EtL", "title": "海贼王船上，勇敢的战士乌索普大人说：我从来不相信，普通的命，只能普通收场——AI大碟《出航》" }
+  ]
+}
