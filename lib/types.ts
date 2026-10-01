@@ -91,3 +91,32 @@ export interface VideosData {
   };
   videos: VideoItem[];
 }
+
+export interface TranscriptSegment {
+  start: number;
+  end: number;
+  text: string;
+}
+
+export interface TranscriptItem {
+  bvid: string;
+  title: string;
+  source?: string;
+  duration?: number;
+  lineCount?: number;
+  text: string;
+  segments: TranscriptSegment[];
+  error?: string;
+}
+
+export interface TranscriptsData {
+  meta: {
+    fetchedAt: string;
+    source: string;
+    note: string;
+    total: number;
+    withText: number;
+    totalChars: number;
+  };
+  transcripts: TranscriptItem[];
+}

@@ -1,8 +1,7 @@
 import insightsJson from "@/data/insights.json";
 import videosJson from "@/data/videos.json";
 import { GlassHero, type HeroStats } from "@/components/make-money/glass-hero";
-import { InsightsExplorer, type VideoRef } from "@/components/make-money/insights-explorer";
-import { ProblemFlowSection } from "@/components/make-money/problem-flow-section";
+import { SiteShell } from "@/components/make-money/site-shell";
 import type { InsightsData, VideosData } from "@/lib/types";
 
 const insights = insightsJson as unknown as InsightsData;
@@ -20,21 +19,16 @@ export default function MakeMoneyPage() {
     sourceUrl: `https://space.bilibili.com/${videos.meta.mid}`,
   };
 
-  const videoMap: Record<string, VideoRef> = Object.fromEntries(
-    videos.videos.map((v) => [v.bvid, { title: v.title, url: v.url, pubdateISO: v.pubdateISO }]),
-  );
-
   return (
-    <main className="relative mx-auto max-w-6xl px-4 pb-20 pt-10 sm:px-6 sm:pt-14">
+    <main className="relative mx-auto max-w-6xl px-4 pb-20 pt-16 sm:px-6 sm:pt-20">
       <GlassHero stats={stats} />
 
-      <InsightsExplorer
+      <SiteShell
+        flow={insights.flowchart}
         categories={insights.categories}
         insights={insights.insights}
-        videoMap={videoMap}
+        videos={videos.videos}
       />
-
-      <ProblemFlowSection flow={insights.flowchart} />
 
       <footer className="mt-14">
         <div className="glass p-6 text-xs leading-relaxed text-slate-500">

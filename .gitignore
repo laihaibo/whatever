@@ -21,3 +21,6 @@ data/whisper-model/
 # misc
 *.log
 .DS_Store
+
+# 本地预览目录
+preview/

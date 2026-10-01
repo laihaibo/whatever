@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
-import { cn } from "@/lib/utils";
+import { bilibiliUrl, cn, formatTime } from "@/lib/utils";
 import type { Category, Confidence, EvidenceItem, Insight } from "@/lib/types";
 
 export interface VideoRef {
@@ -12,14 +12,13 @@ export interface VideoRef {
   pubdateISO: string | null;
 }
 
-/** 分类色 → Tailwind 静态类映射（保证 JIT 扫描到） */
-const categoryTone: Record<string, { chip: string; dot: string }> = {
-  blue: { chip: "bg-blue-500/12 text-blue-700 ring-1 ring-blue-500/25", dot: "bg-blue-500" },
-  green: { chip: "bg-emerald-500/12 text-emerald-700 ring-1 ring-emerald-500/25", dot: "bg-emerald-500" },
-  amber: { chip: "bg-amber-500/15 text-amber-700 ring-1 ring-amber-500/25", dot: "bg-amber-500" },
-  rose: { chip: "bg-rose-500/12 text-rose-700 ring-1 ring-rose-500/25", dot: "bg-rose-500" },
-  violet: { chip: "bg-violet-500/12 text-violet-700 ring-1 ring-violet-500/25", dot: "bg-violet-500" },
-  cyan: { chip: "bg-cyan-500/12 text-cyan-700 ring-1 ring-cyan-500/25", dot: "bg-cyan-500" },
+const categoryTone: Record<string, { chip: string }> = {
+  blue: { chip: "bg-blue-500/12 text-blue-700 ring-1 ring-blue-500/25" },
+  green: { chip: "bg-emerald-500/12 text-emerald-700 ring-1 ring-emerald-500/25" },
+  amber: { chip: "bg-amber-500/15 text-amber-700 ring-1 ring-amber-500/25" },
+  rose: { chip: "bg-rose-500/12 text-rose-700 ring-1 ring-rose-500/25" },
+  violet: { chip: "bg-violet-500/12 text-violet-700 ring-1 ring-violet-500/25" },
+  cyan: { chip: "bg-cyan-500/12 text-cyan-700 ring-1 ring-cyan-500/25" },
 };
 
 const confidenceMeta: Record<Confidence, { label: string; tone: string }> = {
@@ -31,33 +30,40 @@ const confidenceMeta: Record<Confidence, { label: string; tone: string }> = {
 const fieldLabel: Record<EvidenceItem["field"], string> = {
   title: "标题",
   description: "简介",
-  transcript: "视频文案",
+  transcript: "文案",
 };
 
-function fmtTime(sec: number): string {
-  const m = Math.floor(sec / 60);
-  const s = Math.round(sec % 60);
-  return `${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
-}
-
-function EvidenceRow({ ev, video }: { ev: EvidenceItem; video?: VideoRef }) {
+function EvidenceRow({
+  ev,
+  onOpenTranscript,
+}: {
+  ev: EvidenceItem;
+  onOpenTranscript: (bvid: string, t?: number) => void;
+}) {
   return (
-    <li className="flex items-start gap-2.5">
-      <span
-        aria-hidden
-        className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400/70 ring-1 ring-white/60"
-      />
-      <div className="min-w-0 flex-1">
-        <p className="text-[13px] leading-relaxed text-slate-600">「{ev.quote}」</p>
+    <li className="rounded-xl bg-white/45 px-3.5 py-3 ring-1 ring-white/60">
+      <p className="text-[13.5px] leading-relaxed text-slate-700">「{ev.quote}」</p>
+      <div className="mt-2 flex items-center gap-2">
+        {ev.field === "transcript" ? (
+          <button
+            type="button"
+            onClick={() => onOpenTranscript(ev.bvid, ev.t?.[0])}
+            className="rounded-full bg-sky-500/12 px-2.5 py-1 text-[11px] font-medium text-sky-700 ring-1 ring-sky-500/25 transition-colors hover:bg-sky-500/20"
+          >
+            📄 在实录中阅读{ev.t ? ` · ${formatTime(ev.t[0])}` : ""}
+          </button>
+        ) : (
+          <span className="rounded-full bg-slate-900/5 px-2.5 py-1 text-[11px] font-medium text-slate-500">
+            {fieldLabel[ev.field]}
+          </span>
+        )}
         <a
-          href={video?.url ?? `https://www.bilibili.com/video/${ev.bvid}`}
+          href={bilibiliUrl(ev.bvid, ev.t?.[0])}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-0.5 inline-flex items-center gap-1 text-xs text-slate-400 transition-colors hover:text-blue-600"
-          title={video?.title}
+          className="text-[11px] text-slate-400 transition-colors hover:text-blue-600"
         >
-          ▶ {fieldLabel[ev.field]} · {ev.bvid}
-          {ev.t ? ` · ${fmtTime(ev.t[0])}–${fmtTime(ev.t[1])}` : ""}
+          ▶ {ev.bvid}
         </a>
       </div>
     </li>
@@ -67,24 +73,24 @@ function EvidenceRow({ ev, video }: { ev: EvidenceItem; video?: VideoRef }) {
 function InsightCard({
   insight,
   category,
-  videoMap,
+  onOpenTranscript,
 }: {
   insight: Insight;
   category: Category;
-  videoMap: Record<string, VideoRef>;
+  onOpenTranscript: (bvid: string, t?: number) => void;
 }) {
+  const [expanded, setExpanded] = useState(false);
   const tone = categoryTone[category.color] ?? categoryTone.blue;
   const conf = confidenceMeta[insight.confidence];
 
   return (
     <motion.article
       layout
-      initial={{ opacity: 0, scale: 0.96, y: 18 }}
+      initial={{ opacity: 0, scale: 0.97, y: 16 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
-      exit={{ opacity: 0, scale: 0.95, y: -10 }}
+      exit={{ opacity: 0, scale: 0.96, y: -8 }}
       transition={{ type: "spring", stiffness: 260, damping: 28 }}
-      whileHover={{ y: -4 }}
-      className="glass glass-sheen flex h-full flex-col p-5"
+      className="glass flex h-full flex-col p-6"
     >
       <div className="flex items-start justify-between gap-3">
         <span className={cn("inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium", tone.chip)}>
@@ -97,8 +103,8 @@ function InsightCard({
         </span>
       </div>
 
-      <h3 className="mt-3 text-[17px] font-semibold leading-snug text-slate-900">{insight.title}</h3>
-      <p className="mt-1.5 text-sm leading-relaxed text-slate-600">{insight.summary}</p>
+      <h3 className="mt-3 text-xl font-bold leading-snug tracking-tight text-slate-900">{insight.title}</h3>
+      <p className="mt-2 text-[15px] leading-relaxed text-slate-600">{insight.summary}</p>
 
       {insight.tags.length > 0 && (
         <div className="mt-3 flex flex-wrap gap-1.5">
@@ -111,18 +117,34 @@ function InsightCard({
       )}
 
       {insight.note && (
-        <p className="mt-3 rounded-xl bg-amber-500/10 px-3 py-2 text-xs leading-relaxed text-amber-800 ring-1 ring-amber-500/20">
+        <p className="mt-3 rounded-xl bg-amber-500/10 px-3.5 py-2.5 text-[13px] leading-relaxed text-amber-800 ring-1 ring-amber-500/20">
           {insight.note}
         </p>
       )}
 
       <div className="mt-auto pt-4">
-        <p className="mb-2 text-[11px] font-medium uppercase tracking-wider text-slate-400">原文证据</p>
-        <ul className="space-y-2.5">
-          {insight.evidence.map((ev, i) => (
-            <EvidenceRow key={`${insight.id}-${i}`} ev={ev} video={videoMap[ev.bvid]} />
-          ))}
-        </ul>
+        <button
+          type="button"
+          onClick={() => setExpanded((v) => !v)}
+          className="text-[13px] font-medium text-slate-500 transition-colors hover:text-slate-800"
+        >
+          {expanded ? "收起证据 ↑" : `查看原文证据（${insight.evidence.length} 条）↓`}
+        </button>
+        <AnimatePresence initial={false}>
+          {expanded && (
+            <motion.ul
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.25 }}
+              className="mt-3 space-y-2 overflow-hidden"
+            >
+              {insight.evidence.map((ev, i) => (
+                <EvidenceRow key={`${insight.id}-${i}`} ev={ev} onOpenTranscript={onOpenTranscript} />
+              ))}
+            </motion.ul>
+          )}
+        </AnimatePresence>
       </div>
     </motion.article>
   );
@@ -131,11 +153,11 @@ function InsightCard({
 export function InsightsExplorer({
   categories,
   insights,
-  videoMap,
+  onOpenTranscript,
 }: {
   categories: Category[];
   insights: Insight[];
-  videoMap: Record<string, VideoRef>;
+  onOpenTranscript: (bvid: string, t?: number) => void;
 }) {
   const [active, setActive] = useState<string>("all");
 
@@ -148,61 +170,66 @@ export function InsightsExplorer({
   const filtered = active === "all" ? insights : insights.filter((i) => i.categoryId === active);
 
   return (
-    <section className="mt-10" aria-label="赚钱心得列表">
-      <div className="flex flex-wrap items-center gap-2">
-        <button
-          type="button"
-          onClick={() => setActive("all")}
-          className={cn(
-            "glass-chip px-4 py-2 text-sm font-medium transition-all",
-            active === "all"
-              ? "bg-white/75 text-slate-900 shadow-[0_4px_16px_rgba(31,38,135,0.12)]"
-              : "text-slate-600 hover:bg-white/50",
-          )}
-        >
-          全部 <span className="ml-1 text-xs tabular-nums text-slate-400">{counts.all}</span>
-        </button>
-        {categories.map((c) => (
+    <section id="insights" className="mt-12 scroll-mt-24" aria-label="赚钱心得精读">
+      <div className="glass-strong p-8 sm:p-10">
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <h2 className="text-2xl font-bold tracking-tight text-slate-900">心得精读</h2>
+            <p className="mt-2 text-sm text-slate-500">
+              {insights.length} 条方法论，每条都可展开核对原文证据；点「在实录中阅读」直接定位到对应文案位置。
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-5 flex flex-wrap items-center gap-2">
           <button
-            key={c.id}
             type="button"
-            onClick={() => setActive(c.id)}
+            onClick={() => setActive("all")}
             className={cn(
               "glass-chip px-4 py-2 text-sm font-medium transition-all",
-              active === c.id
-                ? "bg-white/75 text-slate-900 shadow-[0_4px_16px_rgba(31,38,135,0.12)]"
-                : "text-slate-600 hover:bg-white/50",
+              active === "all" ? "bg-white/75 text-slate-900 shadow-[0_4px_16px_rgba(31,38,135,0.12)]" : "text-slate-600 hover:bg-white/50",
             )}
           >
-            <span aria-hidden className="mr-1">
-              {c.icon}
-            </span>
-            {c.name} <span className="ml-1 text-xs tabular-nums text-slate-400">{counts[c.id]}</span>
+            全部 <span className="ml-1 text-xs tabular-nums text-slate-400">{counts.all}</span>
           </button>
-        ))}
+          {categories.map((c) => (
+            <button
+              key={c.id}
+              type="button"
+              onClick={() => setActive(c.id)}
+              className={cn(
+                "glass-chip px-4 py-2 text-sm font-medium transition-all",
+                active === c.id ? "bg-white/75 text-slate-900 shadow-[0_4px_16px_rgba(31,38,135,0.12)]" : "text-slate-600 hover:bg-white/50",
+              )}
+            >
+              <span aria-hidden className="mr-1">
+                {c.icon}
+              </span>
+              {c.name} <span className="ml-1 text-xs tabular-nums text-slate-400">{counts[c.id]}</span>
+            </button>
+          ))}
+        </div>
+
+        <motion.div layout className="mt-6 grid grid-cols-1 gap-5 xl:grid-cols-2">
+          <AnimatePresence mode="popLayout">
+            {filtered.map((insight) => {
+              const category =
+                categories.find((c) => c.id === insight.categoryId) ??
+                ({ id: insight.categoryId, name: insight.categoryId, icon: "•", color: "blue", description: "" } as Category);
+              return (
+                <InsightCard
+                  key={insight.id}
+                  insight={insight}
+                  category={category}
+                  onOpenTranscript={onOpenTranscript}
+                />
+              );
+            })}
+          </AnimatePresence>
+        </motion.div>
+
+        {filtered.length === 0 && <p className="mt-10 text-center text-sm text-slate-400">该分类暂无心得</p>}
       </div>
-
-      <motion.div layout className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
-        <AnimatePresence mode="popLayout">
-          {filtered.map((insight) => {
-            const category =
-              categories.find((c) => c.id === insight.categoryId) ??
-              ({ id: insight.categoryId, name: insight.categoryId, icon: "•", color: "blue", description: "" } as Category);
-            return (
-              <InsightCard
-                key={insight.id}
-                insight={insight}
-                category={category}
-                videoMap={videoMap}
-              />
-            );
-          })}
-        </AnimatePresence>
-      </motion.div>
-
-      {filtered.length === 0 && (
-        <p className="mt-10 text-center text-sm text-slate-400">该分类暂无心得</p>
-      )}
     </section>
   );
 }
