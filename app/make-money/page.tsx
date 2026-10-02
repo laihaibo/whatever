@@ -1,6 +1,7 @@
 import insightsJson from "@/data/insights.json";
 import videosJson from "@/data/videos.json";
 import { GlassHero, type HeroStats } from "@/components/make-money/glass-hero";
+import { SiteNav } from "@/components/site-nav";
 import { SiteShell } from "@/components/make-money/site-shell";
 import type { InsightsData, VideosData } from "@/lib/types";
 
@@ -20,7 +21,8 @@ export default function MakeMoneyPage() {
   };
 
   return (
-    <main className="relative mx-auto max-w-6xl px-4 pb-20 pt-10 sm:px-6 sm:pt-14">
+    <main className="relative mx-auto max-w-6xl px-4 pb-20 pt-0 sm:px-6">
+      <SiteNav active="make-money" />
       <GlassHero stats={stats} />
 
       <SiteShell
