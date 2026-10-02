@@ -86,9 +86,8 @@ function InsightCard({
   return (
     <motion.article
       layout
-      initial={{ opacity: 0, scale: 0.97, y: 16 }}
-      animate={{ opacity: 1, scale: 1, y: 0 }}
-      exit={{ opacity: 0, scale: 0.96, y: -8 }}
+      initial={{ y: 14 }}
+      animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 260, damping: 28 }}
       className="glass flex h-full flex-col p-6"
     >
@@ -173,12 +172,12 @@ export function InsightsExplorer({
           </div>
         </div>
 
-        <div className="mt-5 flex flex-wrap items-center gap-2">
+        <div className="mt-5 -mx-1 flex gap-2 overflow-x-auto px-1 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0 sm:pb-0">
           <button
             type="button"
             onClick={() => setActive("all")}
             className={cn(
-              "glass-chip px-4 py-2 text-sm font-medium transition-all",
+              "glass-chip shrink-0 whitespace-nowrap px-4 py-2 text-sm font-medium transition-all",
               active === "all" ? "bg-white/75 text-slate-900 shadow-[0_4px_16px_rgba(31,38,135,0.12)]" : "text-slate-600 hover:bg-white/50",
             )}
           >
@@ -190,7 +189,7 @@ export function InsightsExplorer({
               type="button"
               onClick={() => setActive(c.id)}
               className={cn(
-                "glass-chip px-4 py-2 text-sm font-medium transition-all",
+                "glass-chip shrink-0 whitespace-nowrap px-4 py-2 text-sm font-medium transition-all",
                 active === c.id ? "bg-white/75 text-slate-900 shadow-[0_4px_16px_rgba(31,38,135,0.12)]" : "text-slate-600 hover:bg-white/50",
               )}
             >

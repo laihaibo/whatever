@@ -63,8 +63,8 @@ export function ScenarioWizard({
         {current ? (
           <motion.div
             key={`detail-${group}-${selected}`}
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ y: 16 }}
+            animate={{ y: 0 }}
             transition={{ duration: 0.3 }}
             className="mt-8"
           >
@@ -109,8 +109,8 @@ export function ScenarioWizard({
           ) : (
             <motion.div
               key={`list-${group}`}
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ y: 16 }}
+              animate={{ y: 0 }}
               transition={{ duration: 0.3 }}
               className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2"
             >

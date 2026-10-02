@@ -206,7 +206,7 @@ export function TranscriptModal({
 
   return (
     <motion.div
-      className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-6"
+      className="fixed inset-0 z-[100] flex items-end justify-center sm:items-center sm:p-6"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -225,17 +225,20 @@ export function TranscriptModal({
 
       {target && transcript && (
         <motion.div
-          initial={{ opacity: 0, scale: 0.96, y: 18 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.97, y: 10 }}
+          initial={{ y: 48 }}
+          animate={{ y: 0 }}
+          exit={{ y: 24 }}
           transition={{ type: "spring", stiffness: 320, damping: 30 }}
-          className="relative flex max-h-[88vh] w-full max-w-3xl flex-col overflow-hidden rounded-3xl border border-white/70 bg-gradient-to-b from-white/97 to-white/93 shadow-[0_24px_80px_rgba(15,23,42,0.25)] backdrop-blur-2xl"
+          className="relative flex max-h-[92vh] w-full max-w-3xl flex-col overflow-hidden rounded-t-3xl border border-white/70 bg-gradient-to-b from-white/97 to-white/93 shadow-[0_24px_80px_rgba(15,23,42,0.25)] backdrop-blur-2xl sm:max-h-[88vh] sm:rounded-3xl"
         >
+          {/* 移动端拖拽指示条 */}
+          <div aria-hidden className="mx-auto mt-2.5 h-1.5 w-10 shrink-0 rounded-full bg-slate-300/70 sm:hidden" />
+
           {/* 头部 */}
-          <div className="border-b border-slate-900/8 px-6 pb-4 pt-5">
+          <div className="border-b border-slate-900/8 px-5 pb-3.5 pt-2.5 sm:px-6 sm:pb-4 sm:pt-4">
             <div className="flex items-start justify-between gap-3">
               <div className="min-w-0">
-                <h3 className="text-[17px] font-bold leading-snug tracking-tight text-slate-900">
+                <h3 className="line-clamp-2 text-base font-bold leading-snug tracking-tight text-slate-900 sm:text-[17px]">
                   {transcript.title}
                 </h3>
                 <p className="mt-1 text-xs text-slate-400">

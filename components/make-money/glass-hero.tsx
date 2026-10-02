@@ -22,7 +22,7 @@ function formatCount(n: number): string {
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
-/** 直接使用 initial/animate + 延迟，避免 variants 编排在 SSR 预渲染页面上不触发 */
+/** 入场只做位移不做透明度：内容永远可见（兼容 reduced-motion / 后台标签页 / 冻结帧） */
 function Reveal({
   delay,
   children,
@@ -34,8 +34,8 @@ function Reveal({
 }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 22 }}
-      animate={{ opacity: 1, y: 0 }}
+      initial={{ y: 14 }}
+      animate={{ y: 0 }}
       transition={{ duration: 0.55, delay, ease }}
       className={className}
     >
@@ -55,10 +55,10 @@ export function GlassHero({ stats }: { stats: HeroStats }) {
 
   return (
     <motion.header
-      initial={{ opacity: 0, y: 28 }}
-      animate={{ opacity: 1, y: 0 }}
+      initial={{ y: 18 }}
+      animate={{ y: 0 }}
       transition={{ duration: 0.6, ease }}
-      className="glass-strong relative overflow-hidden p-8 sm:p-10"
+      className="glass-strong relative overflow-hidden p-5 sm:p-10"
     >
       {/* 装饰性柔光斑 */}
       <div
@@ -76,9 +76,9 @@ export function GlassHero({ stats }: { stats: HeroStats }) {
         </Reveal>
 
         <Reveal delay={0.16}>
-          <h1 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+          <h1 className="mt-2 text-[26px] font-bold leading-tight tracking-tight text-slate-900 sm:text-4xl sm:leading-tight">
             赚钱心得
-            <span className="ml-3 align-middle text-base font-normal text-slate-500">
+            <span className="mt-1.5 block text-sm font-normal text-slate-500 sm:ml-3 sm:mt-2 sm:inline sm:text-base">
               每一集都在讲「怎么把东西卖出去」
             </span>
           </h1>
@@ -104,7 +104,7 @@ export function GlassHero({ stats }: { stats: HeroStats }) {
         </Reveal>
 
         <Reveal delay={0.32}>
-          <p className="mt-5 max-w-2xl text-sm leading-relaxed text-slate-600">
+          <p className="mt-4 max-w-2xl text-[13px] leading-relaxed text-slate-600 sm:mt-5 sm:text-sm">
             把「返乡摆摊卖菜」拍成了一部连续剧式的销售课：集市成交术一～十、议价篇、砍价篇。
             本页基于全部 23 条视频的标题、简介与完整文案（本地 ASR 转写）逐条提炼，
             每条心得都附原文证据，可点回原视频。
@@ -112,9 +112,9 @@ export function GlassHero({ stats }: { stats: HeroStats }) {
         </Reveal>
 
         <Reveal delay={0.4}>
-          <div className="mt-6 flex flex-wrap gap-2.5">
+          <div className="mt-4 grid grid-cols-2 gap-2 sm:mt-6 sm:flex sm:flex-wrap sm:gap-2.5">
             {chips.map((c) => (
-              <div key={c.label} className="glass-chip px-4 py-2">
+              <div key={c.label} className="glass-chip px-3.5 py-2 sm:px-4">
                 <span className="text-xs text-slate-500">{c.label}</span>
                 <span className="ml-2 text-sm font-semibold tabular-nums text-slate-800">{c.value}</span>
               </div>
@@ -123,7 +123,7 @@ export function GlassHero({ stats }: { stats: HeroStats }) {
         </Reveal>
 
         <Reveal delay={0.48}>
-          <p className="mt-4 text-xs text-slate-400">
+          <p className="mt-3 text-[11px] text-slate-400 sm:mt-4">
             数据采集于 {stats.fetchedAt.slice(0, 10)} · 公开接口 + 页面文案，不含任何私信数据
           </p>
         </Reveal>

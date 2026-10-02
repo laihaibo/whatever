@@ -38,7 +38,7 @@ export function VideoLibrary({
                 {i + 1}
               </span>
               <span className="min-w-0 flex-1">
-                <span className="block truncate text-[13.5px] font-medium leading-snug text-slate-700">
+                <span className="line-clamp-2 block text-[13.5px] font-medium leading-snug text-slate-700">
                   {v.title}
                 </span>
                 <span className="mt-0.5 block text-[11px] tabular-nums text-slate-400">
