@@ -120,3 +120,33 @@ export interface TranscriptsData {
   };
   transcripts: TranscriptItem[];
 }
+
+// ---------- 对话体标注实录 ----------
+export type DialogueRole = "narration" | "owner" | "customer" | "ad" | "other";
+
+export interface AnnotatedBlock {
+  /** narration=旁白·拆解 owner=摊主 customer=顾客 ad=广告 other=其他 */
+  role: DialogueRole;
+  start: number;
+  end: number;
+  text: string;
+  /** 旁白金句（「记住……」收尾） */
+  highlight?: boolean;
+}
+
+export interface AnnotatedTranscript {
+  bvid: string;
+  title: string;
+  blocks: AnnotatedBlock[];
+}
+
+export interface AnnotatedData {
+  meta: {
+    generatedAt: string;
+    basedOn: string;
+    roles: Record<DialogueRole, string>;
+    editingRules: string;
+    honestyNote: string;
+  };
+  transcripts: AnnotatedTranscript[];
+}

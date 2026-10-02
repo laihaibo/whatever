@@ -1,15 +1,21 @@
 "use client";
 
 import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { bilibiliUrl } from "@/lib/utils";
 import type { FlowScenario, FlowchartData } from "@/lib/types";
 
 /**
- * 场景应对向导（HTML 交互式，替代 Mermaid 流程图）：
- * 场景列表 → 点击进入逐步引导（遇到什么场景 → 怎么判断 → 具体怎么做 → 来源）
+ * 场景应对向导（HTML 交互式）：
+ * 场景列表 → 点击进入逐步引导（遇到什么场景 → 怎么判断 → 具体怎么做 → 来源弹窗）
  */
-export function ScenarioWizard({ flow }: { flow: FlowchartData }) {
+export function ScenarioWizard({
+  flow,
+  onOpenTranscript,
+}: {
+  flow: FlowchartData;
+  onOpenTranscript: (bvid: string) => void;
+}) {
   const [group, setGroup] = useState<"seller" | "buyer">("seller");
   const [selected, setSelected] = useState<number | null>(null);
 
@@ -53,16 +59,15 @@ export function ScenarioWizard({ flow }: { flow: FlowchartData }) {
           </div>
         </div>
 
-        <AnimatePresence mode="wait">
-          {current ? (
-            <motion.div
-              key={`detail-${group}-${selected}`}
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.3 }}
-              className="mt-8"
-            >
+        {/* 注意：不使用 AnimatePresence 的退场门控——功能不依赖动画帧（兼容 reduced-motion / 后台标签页） */}
+        {current ? (
+          <motion.div
+            key={`detail-${group}-${selected}`}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+            className="mt-8"
+          >
               <button
                 type="button"
                 onClick={() => setSelected(null)}
@@ -95,7 +100,7 @@ export function ScenarioWizard({ flow }: { flow: FlowchartData }) {
                       >
                         ▶ 原片 {bvid}
                       </a>
-                      <WizardTranscriptLink bvid={bvid} />
+                      <WizardTranscriptLink bvid={bvid} onOpen={onOpenTranscript} />
                     </span>
                   ))}
                 </div>
@@ -106,7 +111,6 @@ export function ScenarioWizard({ flow }: { flow: FlowchartData }) {
               key={`list-${group}`}
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.3 }}
               className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2"
             >
@@ -132,24 +136,26 @@ export function ScenarioWizard({ flow }: { flow: FlowchartData }) {
               ))}
             </motion.div>
           )}
-        </AnimatePresence>
       </div>
     </section>
   );
 }
 
-function WizardTranscriptLink({ bvid }: { bvid: string }) {
+function WizardTranscriptLink({
+  bvid,
+  onOpen,
+}: {
+  bvid: string;
+  onOpen: (bvid: string) => void;
+}) {
   return (
-    <a
-      href="#transcripts"
-      onClick={() => {
-        // 通知文案实录组件定位到该视频（由 SiteShell 挂载的全局事件监听处理）
-        window.dispatchEvent(new CustomEvent("open-transcript", { detail: { bvid } }));
-      }}
+    <button
+      type="button"
+      onClick={() => onOpen(bvid)}
       className="bg-white/50 px-3 py-1.5 text-xs font-medium text-slate-600 transition-colors hover:bg-white/75"
     >
       📄 文字实录
-    </a>
+    </button>
   );
 }
 

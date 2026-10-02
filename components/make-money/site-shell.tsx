@@ -1,20 +1,21 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import { ScenarioWizard } from "@/components/make-money/scenario-wizard";
 import { InsightsExplorer } from "@/components/make-money/insights-explorer";
-import { TranscriptViewer, type TranscriptTarget } from "@/components/make-money/transcript-viewer";
+import { VideoLibrary } from "@/components/make-money/video-library";
+import { TranscriptModal, type ModalTarget } from "@/components/make-money/transcript-modal";
 import type { Category, Insight, VideoItem, FlowchartData } from "@/lib/types";
 
 const NAV_ITEMS = [
   { href: "#wizard", label: "① 场景指南" },
   { href: "#insights", label: "② 心得精读" },
-  { href: "#transcripts", label: "③ 文案实录" },
+  { href: "#transcripts", label: "③ 视频库" },
 ];
 
 /**
- * 页面主体（客户端壳）：场景向导 → 心得精读 → 文案实录，三者通过
- * 「open-transcript」自定义事件互通（向导/心得的证据可直达实录对应位置）。
+ * 页面主体（客户端壳）：场景向导 → 心得精读 → 视频库。
+ * 所有「看原文」动作都以弹窗形式打开对话体实录，不做页面内跳转。
  */
 export function SiteShell({
   flow,
@@ -27,35 +28,19 @@ export function SiteShell({
   insights: Insight[];
   videos: VideoItem[];
 }) {
-  const [transcriptTarget, setTranscriptTarget] = useState<TranscriptTarget | null>(null);
+  const [modalTarget, setModalTarget] = useState<ModalTarget | null>(null);
 
-  // 监听全局事件：场景向导「文字实录」按钮 / 心得证据「在实录中阅读」
-  useEffect(() => {
-    const handler = (e: Event) => {
-      const detail = (e as CustomEvent<{ bvid: string; t?: number }>).detail;
-      if (detail?.bvid) {
-        setTranscriptTarget(detail);
-        requestAnimationFrame(() => {
-          document.getElementById("transcripts")?.scrollIntoView({ behavior: "smooth", block: "start" });
-        });
-      }
-    };
-    window.addEventListener("open-transcript", handler);
-    return () => window.removeEventListener("open-transcript", handler);
+  const openTranscript = useCallback((bvid: string, t?: number) => {
+    setModalTarget({ bvid, t });
   }, []);
 
-  const openTranscript = (bvid: string, t?: number) => {
-    setTranscriptTarget({ bvid, t });
-    requestAnimationFrame(() => {
-      document.getElementById("transcripts")?.scrollIntoView({ behavior: "smooth", block: "start" });
-    });
-  };
+  const closeModal = useCallback(() => setModalTarget(null), []);
 
   return (
     <>
-      {/* 顶部玻璃导航 */}
-      <nav className="fixed inset-x-0 top-3 z-50 flex justify-center px-4" aria-label="页面导航">
-        <div className="glass-chip flex items-center gap-1 px-2 py-1.5">
+      {/* 顶部玻璃导航（容器不拦截点击，仅芯片可点） */}
+      <nav className="pointer-events-none fixed inset-x-0 top-3 z-50 flex justify-center px-4" aria-label="页面导航">
+        <div className="glass-chip pointer-events-auto flex items-center gap-1 px-2 py-1.5">
           {NAV_ITEMS.map((item) => (
             <a
               key={item.href}
@@ -68,9 +53,12 @@ export function SiteShell({
         </div>
       </nav>
 
-      <ScenarioWizard flow={flow} />
+      <ScenarioWizard flow={flow} onOpenTranscript={openTranscript} />
       <InsightsExplorer categories={categories} insights={insights} onOpenTranscript={openTranscript} />
-      <TranscriptViewer videos={videos} insights={insights} categories={categories} target={transcriptTarget} />
+      <VideoLibrary videos={videos} onOpen={openTranscript} />
+
+      {/* 弹窗不进 AnimatePresence：关闭即卸载，功能不依赖动画帧 */}
+      {modalTarget && <TranscriptModal target={modalTarget} onClose={closeModal} />}
     </>
   );
 }

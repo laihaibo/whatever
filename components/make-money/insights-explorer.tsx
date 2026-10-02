@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { bilibiliUrl, cn, formatTime } from "@/lib/utils";
 import type { Category, Confidence, EvidenceItem, Insight } from "@/lib/types";
@@ -130,21 +130,13 @@ function InsightCard({
         >
           {expanded ? "收起证据 ↑" : `查看原文证据（${insight.evidence.length} 条）↓`}
         </button>
-        <AnimatePresence initial={false}>
-          {expanded && (
-            <motion.ul
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.25 }}
-              className="mt-3 space-y-2 overflow-hidden"
-            >
-              {insight.evidence.map((ev, i) => (
-                <EvidenceRow key={`${insight.id}-${i}`} ev={ev} onOpenTranscript={onOpenTranscript} />
-              ))}
-            </motion.ul>
-          )}
-        </AnimatePresence>
+        {expanded && (
+          <ul className="mt-3 space-y-2">
+            {insight.evidence.map((ev, i) => (
+              <EvidenceRow key={`${insight.id}-${i}`} ev={ev} onOpenTranscript={onOpenTranscript} />
+            ))}
+          </ul>
+        )}
       </div>
     </motion.article>
   );
@@ -210,23 +202,21 @@ export function InsightsExplorer({
           ))}
         </div>
 
-        <motion.div layout className="mt-6 grid grid-cols-1 gap-5 xl:grid-cols-2">
-          <AnimatePresence mode="popLayout">
-            {filtered.map((insight) => {
-              const category =
-                categories.find((c) => c.id === insight.categoryId) ??
-                ({ id: insight.categoryId, name: insight.categoryId, icon: "•", color: "blue", description: "" } as Category);
-              return (
-                <InsightCard
-                  key={insight.id}
-                  insight={insight}
-                  category={category}
-                  onOpenTranscript={onOpenTranscript}
-                />
-              );
-            })}
-          </AnimatePresence>
-        </motion.div>
+      <motion.div layout className="mt-6 grid grid-cols-1 gap-5 xl:grid-cols-2">
+        {filtered.map((insight) => {
+          const category =
+            categories.find((c) => c.id === insight.categoryId) ??
+            ({ id: insight.categoryId, name: insight.categoryId, icon: "•", color: "blue", description: "" } as Category);
+          return (
+            <InsightCard
+              key={insight.id}
+              insight={insight}
+              category={category}
+              onOpenTranscript={onOpenTranscript}
+            />
+          );
+        })}
+      </motion.div>
 
         {filtered.length === 0 && <p className="mt-10 text-center text-sm text-slate-400">该分类暂无心得</p>}
       </div>
