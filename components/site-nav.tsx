@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
-export type SiteNavItem = "make-money" | "slingshot";
+export type SiteNavItem = "make-money" | "slingshot" | "hanfu";
 
 const NAV_ITEMS: { id: SiteNavItem; href: string; label: string; short: string }[] = [
   { id: "make-money", href: "/make-money/", label: "赚钱心得", short: "心得" },
   { id: "slingshot", href: "/slingshot/", label: "弹弓训练", short: "弹弓" },
+  { id: "hanfu", href: "/hanfu/", label: "汉服学习", short: "汉服" },
 ];
 
 /**

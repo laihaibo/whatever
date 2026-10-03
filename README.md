@@ -24,6 +24,15 @@
 
 三大模块互通但不跳转：场景向导和心得证据里的「文字实录」按钮，直接弹出对应视频的对话体实录弹窗，读完即关。
 
+### 站点其他页面
+
+| 页面 | 说明 |
+|---|---|
+| **弹弓训练**（[/slingshot/](https://laihaibo.github.io/whatever/slingshot/)） | 为铝合金 9025 定制的 8 周弹弓系统训练计划：4 阶段渐进（基础定型 → 10 米精度 → 距离与角度 → 进阶精通），含交互打卡清单、扁皮筋配置速查表、常见错误纠正与教程资源库 |
+| **汉服学习**（[/hanfu/](https://laihaibo.github.io/whatever/hanfu/)） | 交领右衽汉服设计制作 6 周入门计划：4 阶段渐进（形制扫盲 → 工具打版 → 第一件交领上襦 → 成套配色设计），含交互打卡清单、名词速查表、形制红线与避坑指南、全网整理的教程资源库（B 站 / 图文 / 书目 / 社区） |
+
+两个页面均为纯静态、可交互打卡（进度存 localStorage），并已接入全站顶部导航。
+
 ## 数据与真实性
 
 本项目的底线是**不编造**：
@@ -79,7 +88,9 @@ node scripts/validate-insights.mjs              # 校验心得数据
 ├── app/                    # Next.js App Router
 │   ├── layout.tsx          # 根布局（zh-CN）
 │   ├── page.tsx            # 入口跳转页（meta refresh）
-│   └── make-money/page.tsx # 主页面（Server Component，静态读入数据）
+│   ├── make-money/page.tsx # 主页面（Server Component，静态读入数据）
+│   ├── slingshot/page.tsx  # 弹弓训练计划页
+│   └── hanfu/page.tsx      # 汉服设计制作学习计划页
 ├── components/
 │   ├── make-money/         # 业务组件
 │   │   ├── site-shell.tsx          # 页面壳：三大模块 + 全局联动事件
@@ -87,6 +98,11 @@ node scripts/validate-insights.mjs              # 校验心得数据
 │   │   ├── insights-explorer.tsx   # 心得精读（分类筛选 + 证据折叠）
 │   │   ├── transcript-viewer.tsx   # 视频文案实录（时间戳跳转）
 │   │   └── glass-hero.tsx          # 顶部统计
+│   ├── site-nav.tsx        # 全站顶部导航（服务端组件，纯链接）
+│   ├── slingshot/          # 弹弓训练计划（8 周 4 阶段打卡制）
+│   │   └── training-plan.tsx
+│   ├── hanfu/              # 汉服学习计划（交领右衽 6 周 4 阶段打卡制）
+│   │   └── learning-plan.tsx
 │   └── ui/                 # shadcn 风格基础组件
 ├── data/                   # 数据资产（采集与提炼产物）
 │   ├── videos.json         # 23 条视频元数据（标题/简介/统计/封面）
